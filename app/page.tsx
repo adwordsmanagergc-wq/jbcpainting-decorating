@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -56,8 +57,18 @@ const benefits = [
 ];
 
 const serviceAreas = [
-  "Kariong", "West Gosford", "Point Clare", "Tascott", "Koolewong", "Woy Woy Bay",
-  "Phegans Bay", "Horsfield Bay", "Somersby", "Calga", "Mooney Mooney Creek", "Wondabyne",
+  { name: "Kariong", slug: "kariong" },
+  { name: "West Gosford", slug: "west-gosford" },
+  { name: "Point Clare", slug: "point-clare" },
+  { name: "Tascott", slug: "tascott" },
+  { name: "Koolewong", slug: "koolewong" },
+  { name: "Woy Woy Bay", slug: "woy-woy-bay" },
+  { name: "Phegans Bay", slug: "phegans-bay" },
+  { name: "Horsfield Bay", slug: "horsfield-bay" },
+  { name: "Somersby", slug: "somersby" },
+  { name: "Calga", slug: "calga" },
+  { name: "Mooney Mooney Creek", slug: "mooney-mooney-creek" },
+  { name: "Wondabyne", slug: "wondabyne" },
 ];
 
 const testimonials = [
@@ -111,7 +122,7 @@ export default function JBCPaintingPage() {
         "addressRegion": "NSW",
         "addressCountry": "AU",
       },
-      "areaServed": serviceAreas.map((area) => ({ "@type": "Place", "name": area + ", NSW" })),
+      "areaServed": serviceAreas.map((area) => ({ "@type": "Place", "name": area.name + ", NSW" })),
       "openingHours": "Mo-Fr 07:00-17:00, Sa 08:00-14:00",
       "priceRange": "$$",
     });
@@ -383,9 +394,9 @@ export default function JBCPaintingPage() {
 
             <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
               {serviceAreas.map((area, idx) => (
-                <span key={idx} className="bg-[#4CAF50]/10 text-[#4CAF50] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4CAF50] hover:text-white transition-colors cursor-default">
-                  {area}
-                </span>
+                <Link key={idx} href={`/painter/${area.slug}`} className="bg-[#4CAF50]/10 text-[#4CAF50] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4CAF50] hover:text-white transition-colors">
+                  {area.name}
+                </Link>
               ))}
             </div>
 
@@ -617,7 +628,9 @@ export default function JBCPaintingPage() {
                 </summary>
                 <ul className="mt-3 space-y-1 text-sm text-gray-400 max-h-48 overflow-y-auto">
                   {serviceAreas.map((area) => (
-                    <li key={area}>{area}</li>
+                    <li key={area.slug}>
+                      <Link href={`/painter/${area.slug}`} className="hover:text-white transition-colors">{area.name}</Link>
+                    </li>
                   ))}
                 </ul>
               </details>
