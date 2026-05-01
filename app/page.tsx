@@ -15,6 +15,10 @@ import {
   Layers,
   Wallpaper,
   Hammer,
+  Menu,
+  X,
+  MessageCircle,
+  Loader2,
 } from "lucide-react";
 
 const logo =
@@ -76,8 +80,12 @@ const faqs = [
   { q: "Do you offer a workmanship warranty?", a: "Yes, all our work comes with a workmanship warranty. We stand behind the quality of our painting and will address any concerns promptly." },
 ];
 
+const navItems = ["Services", "Areas", "Gallery", "FAQs", "Contact"];
+
 export default function JBCPaintingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "", phone: "", email: "", suburb: "", service: "", message: "",
   });
@@ -108,32 +116,55 @@ export default function JBCPaintingPage() {
       "priceRange": "$$",
     });
     document.head.appendChild(schema);
+    return () => { document.head.removeChild(schema); };
+  }, []);
 
-    return () => {
-      document.head.removeChild(schema);
-    };
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => { if (window.innerWidth >= 1024) setMobileMenuOpen(false); };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your enquiry! We'll be in touch shortly.");
-    setFormData({ name: "", phone: "", email: "", suburb: "", service: "", message: "" });
+    setFormStatus("submitting");
+    try {
+      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        setFormData({ name: "", phone: "", email: "", suburb: "", service: "", message: "" });
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
   };
 
   return (
     <div className="min-h-screen bg-[#FDF8F3]" style={{ fontFamily: "'Inter', sans-serif" }}>
+
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <img src={logo} alt="JBC Painting & Decorating Logo" className="h-10 md:h-14 w-auto" />
 
+            {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-8">
-              {["Services", "Areas", "Gallery", "FAQs", "Contact"].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -145,20 +176,59 @@ export default function JBCPaintingPage() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <a href="tel:0402360514" className="flex items-center gap-2 text-sm font-medium text-gray-700">
+              <a href="tel:0402360514" className="hidden sm:flex items-center gap-2 text-sm font-medium text-gray-700">
                 <Phone className="w-4 h-4 text-[#4CAF50]" />
-                <span className="hidden sm:inline">0402 360 514</span>
-                <span className="sm:hidden">Call</span>
+                0402 360 514
               </a>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="bg-[#4CAF50] hover:bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                className="hidden sm:block bg-[#4CAF50] hover:bg-[#1a1a1a] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
               >
                 Get a Free Quote
+              </button>
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile menu drawer */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+            <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+              {navItems.map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-[#4CAF50] hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  {item}
+                </button>
+              ))}
+              <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-2">
+                <a
+                  href="tel:0402360514"
+                  className="flex items-center gap-2 px-4 py-3 text-base font-medium text-gray-700 hover:text-[#4CAF50] hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  <Phone className="w-5 h-5 text-[#4CAF50]" />
+                  0402 360 514
+                </a>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="mx-4 bg-[#4CAF50] hover:bg-[#1a1a1a] text-white px-4 py-3 rounded-lg text-base font-medium transition-colors"
+                >
+                  Get a Free Quote
+                </button>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       <main>
@@ -214,8 +284,8 @@ export default function JBCPaintingPage() {
         </section>
 
         {/* Our Work Carousel */}
-        <section id="gallery" className="relative overflow-hidden bg-white py-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] text-center mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <section id="gallery" className="relative overflow-hidden bg-white py-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] text-center mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
             Our Work
           </h2>
           <div className="carousel-track flex" style={{ animation: "scroll 30s linear infinite" }}>
@@ -234,6 +304,7 @@ export default function JBCPaintingPage() {
               0% { transform: translateX(0); }
               100% { transform: translateX(calc(-${carouselImages.length} * (24rem + 1rem))); }
             }
+            .carousel-track { animation: scroll 30s linear infinite; }
             .carousel-track:hover { animation-play-state: paused; }
             @media (max-width: 768px) {
               @keyframes scroll {
@@ -407,89 +478,120 @@ export default function JBCPaintingPage() {
               </a>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-8 text-gray-900">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors"
-                    placeholder="John Smith"
-                  />
+            {formStatus === "success" ? (
+              <div className="bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-2xl p-12 text-center">
+                <div className="w-16 h-16 bg-[#4CAF50] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors"
-                    placeholder="0402 360 514"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Suburb</label>
-                  <input
-                    type="text"
-                    value={formData.suburb}
-                    onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors"
-                    placeholder="Kariong"
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
-                <select
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors"
+                <h3 className="text-2xl font-bold mb-2">Enquiry Sent!</h3>
+                <p className="text-gray-300 mb-6">Thanks for getting in touch. We'll call you back within 1 business day.</p>
+                <button
+                  onClick={() => setFormStatus("idle")}
+                  className="bg-[#4CAF50] hover:bg-[#3d8b40] text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <option value="">Select a service...</option>
-                  <option value="interior">Interior Painting</option>
-                  <option value="exterior">Exterior Painting</option>
-                  <option value="roof">Roof Painting</option>
-                  <option value="decorative">Decorative Finishes</option>
-                  <option value="wallpaper">Wallpapering</option>
-                  <option value="commercial">Commercial Work</option>
-                  <option value="other">Other</option>
-                </select>
+                  Send Another Enquiry
+                </button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-8 text-gray-900">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none"
+                      placeholder="John Smith"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none"
+                      placeholder="0402 360 514"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Suburb</label>
+                    <input
+                      type="text"
+                      value={formData.suburb}
+                      onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none"
+                      placeholder="Kariong"
+                    />
+                  </div>
+                </div>
 
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
+                  <select
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none"
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="interior">Interior Painting</option>
+                    <option value="exterior">Exterior Painting</option>
+                    <option value="roof">Roof Painting</option>
+                    <option value="decorative">Decorative Finishes</option>
+                    <option value="wallpaper">Wallpapering</option>
+                    <option value="commercial">Commercial Work</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#4CAF50] hover:bg-[#1a1a1a] text-white py-4 rounded-lg text-lg font-semibold transition-colors"
-              >
-                Request Free Quote
-              </button>
-            </form>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                  <textarea
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4CAF50] focus:border-[#4CAF50] transition-colors outline-none resize-none"
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+
+                {formStatus === "error" && (
+                  <p className="text-red-600 text-sm mb-4">
+                    Something went wrong. Please call us directly on{" "}
+                    <a href="tel:0402360514" className="underline">0402 360 514</a>.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={formStatus === "submitting"}
+                  className="w-full bg-[#4CAF50] hover:bg-[#1a1a1a] disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                >
+                  {formStatus === "submitting" ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Request Free Quote"
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </section>
       </main>
@@ -545,6 +647,26 @@ export default function JBCPaintingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Floating action buttons — call & WhatsApp */}
+      <div className="fixed bottom-6 right-4 z-50 flex flex-col gap-3">
+        <a
+          href="https://wa.me/61402360514?text=Hi%20JBC%2C%20I%27d%20like%20a%20free%20quote"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle className="w-6 h-6 fill-white" />
+        </a>
+        <a
+          href="tel:0402360514"
+          className="w-14 h-14 bg-[#4CAF50] hover:bg-[#3d8b40] text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
+          aria-label="Call us"
+        >
+          <Phone className="w-6 h-6" />
+        </a>
+      </div>
     </div>
   );
 }
