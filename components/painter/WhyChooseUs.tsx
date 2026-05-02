@@ -88,17 +88,13 @@ export function WhyChooseUs({ suburb }: { suburb: Suburb }) {
                 href={brand.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#4CAF50]/40 rounded-xl px-6 py-4 transition-all group"
+                className="flex items-center gap-4 hover:opacity-80 transition-opacity"
               >
                 <img
                   src={brand.logo}
                   alt={`${brand.name} logo`}
-                  className="h-12 w-auto object-contain"
+                  className="h-14 w-auto object-contain"
                 />
-                <div className="text-left">
-                  <p className="font-semibold text-white group-hover:text-[#4CAF50] transition-colors">{brand.name}</p>
-                  <p className="text-xs text-gray-400">{brand.tagline}</p>
-                </div>
               </Link>
             ))}
           </div>
