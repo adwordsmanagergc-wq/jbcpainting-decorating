@@ -728,6 +728,262 @@ export const suburbs: Suburb[] = [
     ],
   },
   {
+    slug: "woy-woy",
+    name: "Woy Woy",
+    postcode: "2256",
+    latitude: -33.5167,
+    longitude: 151.3167,
+    intro:
+      "Woy Woy is the beating heart of the peninsula — a bustling railway town on the southern shore of Brisbane Water where fibro and weatherboard homes from the 1950s, 60s, and 70s line the streets, and a genuine sense of community runs deep. The salt-laden air drifting in off the waterway and the esplanade's proximity to the water make exterior paint longevity a real challenge, and it's one JBC Painting & Decorating has mastered across decades of work on the Peninsula. Whether it's a tired fibro cottage or a period brick home crying out for a modern colour refresh, we know exactly what's needed.",
+    localContext:
+      "The bulk of Woy Woy's housing stock was built during the post-war era, when fibro sheeting and weatherboard were the materials of choice for working families relocating from Sydney. Many of these homes have been painted and repainted over the decades with a mix of oil-based and acrylic coatings — layers that need careful assessment before anything new goes on. Our painters are well versed in surface preparation for multi-coat fibro homes: testing adhesion, sealing porous areas, feathering edges, and applying the right primer for the substrate. The results speak for themselves.\n\nThe waterfront esplanade and Brisbane Water foreshore create an environment where salt air is ever-present, accelerating chalking and corrosion on metal components like gutters, fascias, and window frames. We always specify rust-inhibiting primers on any exposed metal in Woy Woy and recommend high-performance 100% acrylic exterior coatings that resist UV and moisture in equal measure. The suburb also has a number of older commercial buildings along the main strip — shops and businesses that benefit from a professional repaint to stay competitive and appealing.",
+    uniqueSellingPoints: [
+      "Deep experience with 1950s–70s fibro and weatherboard homes on the Peninsula",
+      "Salt-air rated exterior systems for Brisbane Water-adjacent properties",
+      "Heritage-appropriate colour advice for Woy Woy's period streetscapes",
+      "Commercial painting for the Woy Woy retail and business strip",
+    ],
+    nearbySuburbs: ["woy-woy-bay", "koolewong", "tascott", "horsfield-bay"],
+    faqs: [
+      {
+        question: "How does Woy Woy's waterfront location affect paint durability?",
+        answer:
+          "The salt air from Brisbane Water is one of the main factors that shortens paint life in Woy Woy. Salt particles settle on painted surfaces and draw moisture into the film, causing chalking, blistering, and peeling sooner than in inland areas. We address this by using premium 100% acrylic exterior coatings and ensuring all metal components are primed with a zinc-phosphate rust inhibitor before topcoating.",
+      },
+      {
+        question: "My Woy Woy home is a fibro cottage from the 1960s — what's involved in repainting it?",
+        answer:
+          "Repainting an older fibro home starts with a thorough inspection of the existing coating and the fibro substrate. We high-pressure wash the exterior, assess adhesion, seal any porous areas with an appropriate primer, and feather all existing paint edges before applying fresh topcoats. We never sand or cut the fibro sheeting — only surface-applied work.",
+      },
+      {
+        question: "Can you help with colours that suit the older character homes in Woy Woy?",
+        answer:
+          "Absolutely. Woy Woy has a strong heritage character and period-appropriate palettes — classic whites, warm creams, heritage greens, and soft ochres — suit the older streetscapes beautifully. We'll bring colour samples and discuss options that complement your roof colour, garden, and neighbourhood.",
+      },
+      {
+        question: "Do you paint commercial properties on the Woy Woy main strip?",
+        answer:
+          "Yes. We service commercial and retail premises along the Woy Woy commercial corridor. We can schedule work outside business hours to minimise disruption to trading and deliver a professional, durable finish that stands up to foot traffic and UV exposure.",
+      },
+      {
+        question: "How much does it cost to paint a fibro home exterior in Woy Woy?",
+        answer:
+          "For a typical 3–4 bedroom fibro home in Woy Woy, exterior repainting typically ranges from $3,800 to $8,500, depending on the size of the home, the condition of the existing surface, the number of storeys, and the extent of preparation required. We provide free, itemised written quotes.",
+      },
+      {
+        question: "Are you licensed and insured for work in Woy Woy?",
+        answer:
+          "Yes. JBC Painting & Decorating holds all required NSW Fair Trading licences and carries comprehensive public liability insurance. We're happy to provide copies of our certificates before work commences on your Woy Woy property.",
+      },
+    ],
+    testimonials: [
+      {
+        name: "Deborah & Alan F.",
+        suburb: "Woy Woy",
+        rating: 5,
+        text: "Our fibro home in Woy Woy had been painted too many times without proper prep and was starting to peel badly. JBC came in, assessed everything thoroughly, and produced a beautiful result that has lasted two summers near the water without a hint of peeling. Highly recommend.",
+      },
+      {
+        name: "Noel C.",
+        suburb: "Woy Woy",
+        rating: 5,
+        text: "Needed the interior of my older Woy Woy home freshened up before I put it on the market. JBC were efficient, tidy, and chose a colour palette that genuinely made the rooms look bigger and brighter. The agent said the presentation made a real difference.",
+      },
+    ],
+  },
+  {
+    slug: "terrigal",
+    name: "Terrigal",
+    postcode: "2260",
+    latitude: -33.45,
+    longitude: 151.45,
+    intro:
+      "Terrigal is the Central Coast's premier beachside suburb — a stretch of golden sand, upscale restaurants, and high-end real estate that draws visitors and property buyers from Sydney and beyond. The combination of luxury homes, holiday apartments, older weatherboard beach houses, and a thriving business strip along The Esplanade makes Terrigal one of the most diverse and rewarding suburbs for a professional painting contractor. JBC Painting & Decorating delivers the premium finishes that Terrigal's discerning property owners expect.",
+    localContext:
+      "Salt air and UV intensity are the defining environmental challenges for exterior paint in Terrigal. Homes within a few streets of the beach — particularly those facing north-east toward Terrigal Beach and The Haven — experience concentrated coastal exposure that can halve the lifespan of a poorly specified paint system. We always recommend marine-grade or high-performance exterior coatings for Terrigal properties, with appropriate rust-inhibiting primers on all metal surfaces including balcony railings, downpipes, and window frames. Getting the specification right from the start is far more cost-effective than dealing with premature failure.\n\nThe premium nature of Terrigal's property market means presentation is everything. Many homeowners here are running Airbnb and holiday rental properties that need to look impeccable year-round to stay competitive, and we've developed a reputation for delivering the crisp, high-quality finishes these properties require. The older weatherboard beach houses near the lagoon have their own character and charm — and their own set of preparation requirements — while the newer rendered homes and apartment buildings on the ridgeline call for flexible, crack-resistant coating systems. We're equally comfortable across both ends of the spectrum.",
+    uniqueSellingPoints: [
+      "Premium-finish expertise for Terrigal's high-end homes and holiday rentals",
+      "Marine-grade exterior coatings for direct beach and coastal exposure",
+      "Experience with both heritage weatherboard beach houses and modern rendered properties",
+      "Commercial painting for Terrigal's restaurant and retail Esplanade strip",
+    ],
+    nearbySuburbs: ["erina", "woy-woy", "umina-beach", "point-clare"],
+    faqs: [
+      {
+        question: "What exterior paint system do you recommend for a home near Terrigal Beach?",
+        answer:
+          "For homes within a few hundred metres of Terrigal Beach, we specify a premium 100% acrylic exterior paint such as Dulux Weathershield or Taubmans Endure, paired with a zinc-phosphate rust-inhibiting primer on all metal surfaces. These products are formulated to resist salt attack, UV degradation, and moisture intrusion — the three main enemies of coastal paint systems.",
+      },
+      {
+        question: "How often should a holiday rental property in Terrigal be repainted?",
+        answer:
+          "Holiday rental properties in Terrigal benefit from more frequent refresh cycles than owner-occupied homes, simply because guest turnover creates more wear and the need to stay presentation-competitive. We typically see clients repainting interiors every 4–6 years and exteriors every 8–10 years, though coastal-facing facades may need attention sooner.",
+      },
+      {
+        question: "Can you paint older weatherboard beach houses in Terrigal?",
+        answer:
+          "Yes, weatherboard beach houses are a specialty. We inspect the timber for rot, replace damaged boards where needed, sand back to a sound surface, apply a quality timber primer, and finish with two topcoats of a premium exterior paint. The result is a restored, durable finish that honours the character of these classic homes.",
+      },
+      {
+        question: "Do you provide interior painting for apartments and units in Terrigal?",
+        answer:
+          "Yes. Apartments and holiday units in Terrigal are a regular part of our work. We use low-VOC interior paints where tenants or guests need to return quickly, and we can work to tight turnaround schedules to minimise rental vacancy.",
+      },
+      {
+        question: "Can you paint the commercial premises along The Esplanade in Terrigal?",
+        answer:
+          "Absolutely. Restaurants, cafes, and retail premises along Terrigal's Esplanade strip benefit from a polished, well-maintained exterior. We schedule commercial work for after-hours or early morning to avoid disruption to trading, and we use durable commercial-grade coatings rated for high-traffic environments.",
+      },
+      {
+        question: "Do you offer free quotes in Terrigal?",
+        answer:
+          "Yes. We provide free on-site quotes throughout Terrigal and the surrounding Central Coast suburbs. We'll assess the surfaces, discuss your goals, and deliver a detailed written quote within 48 hours of our visit.",
+      },
+    ],
+    testimonials: [
+      {
+        name: "Belinda & James O.",
+        suburb: "Terrigal",
+        rating: 5,
+        text: "We have a holiday rental in Terrigal that needed a full exterior repaint to stay competitive on Airbnb. JBC delivered a flawless finish using the right products for the coastal conditions. The property photographs beautifully now and bookings have noticeably improved.",
+      },
+      {
+        name: "Gary W.",
+        suburb: "Terrigal",
+        rating: 5,
+        text: "JBC painted our weatherboard beach house near Terrigal Lagoon and did a fantastic job. They replaced a couple of rotten boards, primed everything properly, and the colours they suggested really suit the beachside character of the home. Exceptional work.",
+      },
+    ],
+  },
+  {
+    slug: "erina",
+    name: "Erina",
+    postcode: "2250",
+    latitude: -33.4333,
+    longitude: 151.4,
+    intro:
+      "Erina is the commercial and residential engine room of the Central Coast — home to Erina Fair shopping centre, a major arterial road network, and a substantial residential population spread across both established 1970s-80s neighbourhoods and newer estate developments. The variety of housing eras and the significant commercial activity make Erina one of the most diverse painting markets on the Coast, and JBC Painting & Decorating is well equipped to handle every corner of it.",
+    localContext:
+      "The residential streets of Erina are dominated by brick veneer homes from the 1970s and 80s — solid, practical homes that now benefit greatly from a contemporary colour update. Many of these properties have original render on the brickwork that has crazed or become porous over time, requiring sealing before any new topcoat is applied. The elevated homes in Erina Heights present elevated perspectives and, in some cases, elevated access challenges, but the sweeping views make the effort worthwhile for both homeowners and the painting crew.\n\nErina's commercial precinct — anchored by Erina Fair and spread along Karalta Road and surrounds — offers significant opportunities for commercial and retail painting. Shop fronts, office buildings, and service premises all need regular maintenance to stay looking professional, and we have experience delivering these projects with minimal disruption to business operations. The suburb's proximity to Gosford CBD and its strong population growth mean new residential developments are also a growing part of the Erina painting landscape.",
+    uniqueSellingPoints: [
+      "Colour update expertise for Erina's 1970s and 80s brick veneer homes",
+      "Commercial painting for the Erina Fair precinct and Karalta Road businesses",
+      "Access experience for elevated Erina Heights properties",
+      "New development painting for Erina's growing residential estates",
+    ],
+    nearbySuburbs: ["terrigal", "point-clare", "west-gosford", "kariong"],
+    faqs: [
+      {
+        question: "Can you update the colours on a 1970s brick veneer home in Erina?",
+        answer:
+          "Absolutely. A fresh colour scheme on an older Erina brick home is one of the most cost-effective ways to modernise its appearance. We clean and seal the render, repair any cracks, and apply a quality exterior paint in the colours of your choice. The transformation is often remarkable.",
+      },
+      {
+        question: "My Erina home has old render that is cracking — do you repair it before painting?",
+        answer:
+          "Yes. Crazed or cracked render is a very common issue in Erina's older homes. We fill hairline cracks with a flexible exterior filler, apply a skim coat to broader areas where needed, prime the repaired sections, and then paint over the whole surface to achieve a consistent, durable finish.",
+      },
+      {
+        question: "Do you paint commercial properties near Erina Fair?",
+        answer:
+          "Yes. We service commercial and retail properties throughout the Erina commercial precinct, including the Karalta Road corridor and surrounds. We plan commercial work carefully to minimise disruption, including after-hours scheduling where required.",
+      },
+      {
+        question: "Can you paint a new house in one of Erina's newer estates?",
+        answer:
+          "Yes. New builds in Erina's growing residential estates are a regular part of our workload. We work from the builder's paint schedule or help develop one if needed. All new timber and metal elements are primed before topcoating, and we ensure full coverage in a sequence that suits the construction programme.",
+      },
+      {
+        question: "How long does a full interior repaint take for a family home in Erina?",
+        answer:
+          "A standard 4-bedroom family home in Erina typically takes 4–6 days for a full interior repaint, covering walls, ceilings, and trim. This includes preparation, priming bare areas, and two coats of finish. We'll give you a clear timeline in the written quote.",
+      },
+      {
+        question: "Do you offer free quotes in Erina?",
+        answer:
+          "Yes. We provide free on-site quotes across Erina and surrounding suburbs. We inspect the surfaces, note all preparation requirements, and provide a detailed written quote within 48 hours. There's no obligation to proceed.",
+      },
+    ],
+    testimonials: [
+      {
+        name: "Karen & Phil M.",
+        suburb: "Erina",
+        rating: 5,
+        text: "Our 1980s brick home in Erina was looking very dated. JBC repaired the render, updated the colour scheme, and the result looks like a completely different house. Neighbours have been stopping to ask who did the work. Couldn't be happier.",
+      },
+      {
+        name: "Steve D.",
+        suburb: "Erina",
+        rating: 5,
+        text: "I run a small business on Karalta Road and needed the shopfront repainted to a higher standard. JBC came in early morning, completed the work before we opened, and the finish is sharp and professional. Very happy with the result.",
+      },
+    ],
+  },
+  {
+    slug: "umina-beach",
+    name: "Umina Beach",
+    postcode: "2257",
+    latitude: -33.5167,
+    longitude: 151.3,
+    intro:
+      "Umina Beach is one of those rare suburbs where the laid-back beach lifestyle hasn't been polished away — a relaxed, community-oriented patch of the Woy Woy Peninsula where older fibro and weatherboard beach cottages sit alongside newer brick homes, and where the long sweep of Ocean Beach is just a short walk from most front doors. JBC Painting & Decorating understands the specific mix of older substrate challenges, salt-air coastal conditions, and renovation-driven demand that defines painting work in Umina Beach.",
+    localContext:
+      "Many of the homes in Umina Beach were originally built in the 1950s and 60s as modest holiday shacks — fibro-clad, simply built, and painted in whatever was available at the time. Decades of repainting, some professional and some far from it, have created the kind of layered paint histories that require careful assessment before any new work begins. Our team inspects adhesion, checks for compatibility between coating types, and develops a preparation plan specific to each home's history — not a one-size-fits-all approach. The result is a foundation that actually lasts.\n\nThe coastal environment at Umina Beach is demanding. The suburb faces directly east toward Ocean Beach, meaning homes on the beach-side streets experience full salt-spray exposure from the Pacific. Exterior coatings here need to be tough — 100% acrylic systems with genuine UV and moisture resistance are the minimum standard we specify. The growing trend of converting old holiday shacks into permanent residences also drives demand for full renovation paint jobs: stripping decades of old coatings, repairing substrates, and delivering a fresh finish that meets the expectations of year-round living.",
+    uniqueSellingPoints: [
+      "Specialist preparation for Umina Beach's older fibro holiday-cottage conversions",
+      "Full-exposure coastal coatings for homes directly facing Ocean Beach",
+      "Renovation repaints for shacks converted to permanent residences",
+      "Palm Beach Road commercial painting for local businesses",
+    ],
+    nearbySuburbs: ["woy-woy", "woy-woy-bay", "horsfield-bay", "phegans-bay"],
+    faqs: [
+      {
+        question: "My Umina Beach cottage has multiple layers of old paint — what do you do about that?",
+        answer:
+          "Multiple paint layers on older Umina Beach fibro homes require a systematic approach. We assess adhesion across the entire surface, remove any areas that are failing, feather the edges of stable coatings, and apply appropriate primers before topcoating. Where the paint history is particularly complex, we may recommend a more thorough strip-back — we'll be honest about what's needed.",
+      },
+      {
+        question: "How does the Ocean Beach exposure affect paint in Umina Beach?",
+        answer:
+          "Direct exposure to Ocean Beach salt spray is one of the harshest coastal environments on the Central Coast. Salt particles settle on painted surfaces and accelerate oxidation of metals and degradation of paint films. We use high-performance 100% acrylic exterior paints and zinc-phosphate primers on all metal components for Umina Beach homes facing the beach.",
+      },
+      {
+        question: "We're converting our old Umina Beach shack to a permanent home — can you do the full repaint?",
+        answer:
+          "Yes, this is a project we love. Converting a holiday shack to a permanent residence often involves a comprehensive repaint — exterior and interior — as part of the renovation. We can work alongside other trades, stage the painting to suit the build sequence, and deliver a finish that's ready for year-round living.",
+      },
+      {
+        question: "How much does it cost to repaint an older fibro home in Umina Beach?",
+        answer:
+          "For a typical older fibro cottage in Umina Beach, exterior repainting ranges from $3,500 to $8,000 depending on size, the condition of existing paint, and the extent of preparation needed. We provide free, itemised written quotes so you know exactly what you're getting.",
+      },
+      {
+        question: "Can you paint fences and gates at my Umina Beach property?",
+        answer:
+          "Yes. Timber and metal fences, gates, and boundary structures are a common addition to a full exterior repaint in Umina Beach. We prepare and prime appropriately for each material type and use exterior coatings rated for coastal conditions.",
+      },
+      {
+        question: "Do you paint the commercial premises on Palm Beach Road in Umina Beach?",
+        answer:
+          "Yes. We service commercial and retail properties along Palm Beach Road and the broader Umina Beach shopping strip. We can schedule commercial work for after-hours or quiet periods to avoid disrupting your trading day.",
+      },
+    ],
+    testimonials: [
+      {
+        name: "Sharon & Brett K.",
+        suburb: "Umina Beach",
+        rating: 5,
+        text: "We renovated our old Umina Beach holiday shack to make it our permanent home and JBC did the full exterior and interior repaint. They were professional throughout, handled the tricky old fibro with real expertise, and the finished result is something we're very proud of.",
+      },
+      {
+        name: "Terry H.",
+        suburb: "Umina Beach",
+        rating: 5,
+        text: "The salt air near Ocean Beach had really taken a toll on our exterior paint. JBC specified the right products for the coastal exposure, prepared everything properly, and the finish has held up beautifully through a full summer. Excellent work.",
+      },
+    ],
+  },
+  {
     slug: "wondabyne",
     name: "Wondabyne",
     postcode: "2256",

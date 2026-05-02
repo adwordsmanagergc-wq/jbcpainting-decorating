@@ -61,6 +61,10 @@ const serviceAreas = [
   { name: "Tascott", slug: "tascott" },
   { name: "Koolewong", slug: "koolewong" },
   { name: "Woy Woy Bay", slug: "woy-woy-bay" },
+  { name: "Woy Woy", slug: "woy-woy" },
+  { name: "Umina Beach", slug: "umina-beach" },
+  { name: "Terrigal", slug: "terrigal" },
+  { name: "Erina", slug: "erina" },
   { name: "Phegans Bay", slug: "phegans-bay" },
   { name: "Horsfield Bay", slug: "horsfield-bay" },
   { name: "Somersby", slug: "somersby" },
@@ -426,7 +430,7 @@ export default function JBCPaintingPage() {
             </div>
 
             <p className="text-center text-gray-500 mt-8 text-sm">
-              Plus Gosford, Woy Woy, Terrigal, Erina, Umina Beach and more. Contact us to confirm we service your area.
+              Plus many more suburbs across the Central Coast. Contact us to confirm we service your area.
             </p>
           </div>
         </section>
@@ -647,7 +651,7 @@ export default function JBCPaintingPage() {
               <h4 className="font-semibold mb-4">Service Areas</h4>
               <details className="group">
                 <summary className="flex items-center gap-2 cursor-pointer text-sm text-gray-400 hover:text-white transition-colors list-none">
-                  <span>View all 12 areas</span>
+                  <span>View all areas</span>
                   <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <ul className="mt-3 space-y-1 text-sm text-gray-400 max-h-48 overflow-y-auto">
