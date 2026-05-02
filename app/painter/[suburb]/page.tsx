@@ -33,6 +33,11 @@ export async function generateMetadata({ params }: { params: Promise<{ suburb: s
     alternates: { canonical: url },
     openGraph: { title, description, url, type: "website" },
     twitter: { card: "summary_large_image", title, description },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" as const, "max-video-preview": -1 },
+    },
     keywords: [
       `painter ${suburb.name}`,
       `house painter ${suburb.name}`,
@@ -40,7 +45,9 @@ export async function generateMetadata({ params }: { params: Promise<{ suburb: s
       `${suburb.name} painting services`,
       `interior painter ${suburb.name}`,
       `exterior painter ${suburb.name}`,
+      `roof painting ${suburb.name}`,
       `painter Central Coast`,
+      `painting contractor ${suburb.name} NSW`,
     ],
   };
 }
