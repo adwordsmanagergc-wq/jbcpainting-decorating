@@ -383,8 +383,8 @@ export default function JBCPaintingPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 {[
-                  { name: "Dulux", url: "https://www.dulux.com.au", logo: "/images/dulux-logo.svg", tagline: "Premium Interior & Exterior" },
-                  { name: "Haymes Paint", url: "https://www.haymes.com.au", logo: "/images/haymes-logo.svg", tagline: "Australian Made & Owned" },
+                  { name: "Dulux", url: "https://www.dulux.com.au", logo: "/images/dulux-logo.webp", tagline: "Premium Interior & Exterior" },
+                  { name: "Haymes Paint", url: "https://www.haymes.com.au", logo: "/images/haymes-logo.png", tagline: "Australian Made & Owned" },
                 ].map((brand) => (
                   <a
                     key={brand.name}
@@ -396,7 +396,7 @@ export default function JBCPaintingPage() {
                     <img
                       src={brand.logo}
                       alt={`${brand.name} logo`}
-                      className="h-10 w-auto rounded-lg object-contain"
+                      className="h-12 w-auto object-contain"
                     />
                     <div className="text-left">
                       <p className="font-semibold text-white group-hover:text-[#4CAF50] transition-colors">{brand.name}</p>

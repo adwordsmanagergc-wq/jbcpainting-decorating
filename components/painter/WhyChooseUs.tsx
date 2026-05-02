@@ -11,13 +11,13 @@ const paintBrands = [
   {
     name: "Dulux",
     url: "https://www.dulux.com.au",
-    logo: "/images/dulux-logo.svg",
+    logo: "/images/dulux-logo.webp",
     tagline: "Premium Interior & Exterior",
   },
   {
     name: "Haymes Paint",
     url: "https://www.haymes.com.au",
-    logo: "/images/haymes-logo.svg",
+    logo: "/images/haymes-logo.png",
     tagline: "Australian Made & Owned",
   },
 ];
@@ -93,7 +93,7 @@ export function WhyChooseUs({ suburb }: { suburb: Suburb }) {
                 <img
                   src={brand.logo}
                   alt={`${brand.name} logo`}
-                  className="h-10 w-auto rounded-lg object-contain"
+                  className="h-12 w-auto object-contain"
                 />
                 <div className="text-left">
                   <p className="font-semibold text-white group-hover:text-[#4CAF50] transition-colors">{brand.name}</p>
