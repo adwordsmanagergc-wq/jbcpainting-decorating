@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const SuburbMapDynamic = dynamic(() => import("@/components/SuburbMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full rounded-2xl bg-gray-100 animate-pulse" style={{ height: "520px" }} />
+  ),
+});
 import {
   Phone,
   Mail,
@@ -409,28 +417,22 @@ export default function JBCPaintingPage() {
           </div>
         </section>
 
-        {/* Service Areas */}
+        {/* Service Areas — Interactive Map */}
         <section id="areas" className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Areas We Service
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Trusted painter servicing the Central Coast and surrounding suburbs
+                Click any suburb on the map to see our dedicated painting services for that area
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-              {serviceAreas.map((area, idx) => (
-                <Link key={idx} href={`/painter/${area.slug}`} className="bg-[#4CAF50]/10 text-[#4CAF50] px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4CAF50] hover:text-white transition-colors">
-                  {area.name}
-                </Link>
-              ))}
-            </div>
+            <SuburbMapDynamic />
 
-            <p className="text-center text-gray-500 mt-8 text-sm">
-              Plus many more suburbs across the Central Coast. Contact us to confirm we service your area.
+            <p className="text-center text-gray-500 mt-6 text-sm">
+              Servicing the entire Central Coast. Contact us to confirm we cover your area.
             </p>
           </div>
         </section>
