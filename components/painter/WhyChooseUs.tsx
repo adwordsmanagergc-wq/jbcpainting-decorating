@@ -1,9 +1,25 @@
+import Link from "next/link";
 import { Suburb } from "@/lib/suburbs";
 
 const fixedBenefits = [
   "Licensed & Insured — NSW Fair Trading licensed with comprehensive public liability cover",
-  "Premium Paints — Dulux, Taubmans, and other leading Australian brands",
+  "Premium Paints — We use Dulux & Haymes for a flawless, long-lasting finish",
   "Workmanship Warranty — we stand behind every job we complete",
+];
+
+const paintBrands = [
+  {
+    name: "Dulux",
+    url: "https://www.dulux.com.au",
+    logo: "https://logo.clearbit.com/dulux.com.au",
+    tagline: "Premium Interior & Exterior",
+  },
+  {
+    name: "Haymes Paint",
+    url: "https://www.haymes.com.au",
+    logo: "https://logo.clearbit.com/haymes.com.au",
+    tagline: "Australian Made & Owned",
+  },
 ];
 
 function CheckCircle() {
@@ -58,6 +74,34 @@ export function WhyChooseUs({ suburb }: { suburb: Suburb }) {
               </div>
             );
           })}
+        </div>
+
+        {/* Paint brands strip */}
+        <div className="mt-16 pt-12 border-t border-white/10">
+          <p className="text-center text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
+            Trusted Paint Brands We Use
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
+            {paintBrands.map((brand) => (
+              <Link
+                key={brand.name}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#4CAF50]/40 rounded-xl px-6 py-4 transition-all group"
+              >
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  className="w-10 h-10 rounded-lg object-contain bg-white p-1"
+                />
+                <div className="text-left">
+                  <p className="font-semibold text-white group-hover:text-[#4CAF50] transition-colors">{brand.name}</p>
+                  <p className="text-xs text-gray-400">{brand.tagline}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

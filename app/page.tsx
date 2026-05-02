@@ -14,7 +14,6 @@ import {
   Home,
   Building2,
   Layers,
-  Wallpaper,
   Hammer,
   Menu,
   X,
@@ -41,7 +40,6 @@ const services = [
   { icon: Building2, title: "Exterior Painting", desc: "Weather-resistant coatings that protect and beautify" },
   { icon: Layers, title: "Roof Painting", desc: "Extend your roof's life with professional restoration" },
   { icon: Paintbrush, title: "Decorative Finishes", desc: "Feature walls, textures, and specialty coatings" },
-  { icon: Wallpaper, title: "Wallpapering", desc: "Expert installation for a perfect finish every time" },
   { icon: Building2, title: "Commercial Work", desc: "Minimal disruption, maximum impact for businesses" },
   { icon: Hammer, title: "New Builds", desc: "Premium finishes for new construction projects" },
   { icon: Home, title: "Repaints", desc: "Refresh and renew your existing paintwork" },
@@ -50,7 +48,7 @@ const services = [
 const benefits = [
   { title: "Free Quotes", desc: "No obligation quotes for all Central Coast projects" },
   { title: "Fully Licensed & Insured", desc: "Complete peace of mind with every job" },
-  { title: "Premium Paints", desc: "We use only quality brands like Dulux and Taubmans" },
+  { title: "Premium Paints", desc: "We use Dulux & Haymes — Australia's leading paint brands" },
   { title: "Tidy Workmanship", desc: "We leave your property spotless when we're done" },
   { title: "On-Time Completion", desc: "Reliable scheduling you can count on" },
   { title: "Locally Owned", desc: "Proudly based in Kariong, servicing the Coast" },
@@ -82,7 +80,7 @@ const faqs = [
   { q: "How much does painting a house on the Central Coast cost?", a: "Costs vary depending on the size of your home, the condition of surfaces, and the type of paint used. We provide free, no-obligation quotes so you know exactly what to expect. Contact us for a personalised estimate." },
   { q: "Are you a licensed painter?", a: "Yes, JBC Painting & Decorating is fully licensed and compliant with all NSW regulations. We carry all necessary insurances for your peace of mind." },
   { q: "Do you offer free quotes in Kariong and surrounding areas?", a: "Absolutely! We offer free quotes throughout Kariong, Gosford, Woy Woy, and the entire Central Coast region. Simply give us a call or fill out our contact form." },
-  { q: "What paint brands do you use?", a: "We use premium Australian brands including Dulux, Taubmans, and Solver. We're happy to discuss paint options and finishes to suit your preferences and budget." },
+  { q: "What paint brands do you use?", a: "We use Dulux and Haymes — two of Australia's most trusted paint brands. Both offer premium quality, excellent coverage, and lasting durability. We're happy to discuss colour ranges and finishes to suit your preferences and budget." },
   { q: "How long does an interior repaint take?", a: "A typical 3-bedroom home takes 3-5 days depending on preparation required and the number of colours. We'll provide a clear timeline with your quote." },
   { q: "Do you do exterior and roof painting?", a: "Yes, we specialise in both exterior painting and roof restoration. We use weather-resistant coatings designed for Australian conditions." },
   { q: "Are you insured?", a: "Yes, we carry comprehensive public liability insurance and workers compensation coverage. You can request a copy of our certificates at any time." },
@@ -377,6 +375,37 @@ export default function JBCPaintingPage() {
                 </div>
               ))}
             </div>
+
+            {/* Paint brands strip */}
+            <div className="mt-16 pt-12 border-t border-white/10">
+              <p className="text-center text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
+                Trusted Paint Brands We Use
+              </p>
+              <div className="flex flex-wrap justify-center gap-6">
+                {[
+                  { name: "Dulux", url: "https://www.dulux.com.au", logo: "https://logo.clearbit.com/dulux.com.au", tagline: "Premium Interior & Exterior" },
+                  { name: "Haymes Paint", url: "https://www.haymes.com.au", logo: "https://logo.clearbit.com/haymes.com.au", tagline: "Australian Made & Owned" },
+                ].map((brand) => (
+                  <a
+                    key={brand.name}
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#4CAF50]/40 rounded-xl px-6 py-4 transition-all group"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      className="w-10 h-10 rounded-lg object-contain bg-white p-1"
+                    />
+                    <div className="text-left">
+                      <p className="font-semibold text-white group-hover:text-[#4CAF50] transition-colors">{brand.name}</p>
+                      <p className="text-xs text-gray-400">{brand.tagline}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -563,8 +592,7 @@ export default function JBCPaintingPage() {
                     <option value="exterior">Exterior Painting</option>
                     <option value="roof">Roof Painting</option>
                     <option value="decorative">Decorative Finishes</option>
-                    <option value="wallpaper">Wallpapering</option>
-                    <option value="commercial">Commercial Work</option>
+  <option value="commercial">Commercial Work</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
