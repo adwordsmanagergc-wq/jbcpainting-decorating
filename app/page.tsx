@@ -687,6 +687,17 @@ export default function JBCPaintingPage() {
 
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
             <p>© {new Date().getFullYear()} JBC Painting &amp; Decorating. All rights reserved.</p>
+            <p className="mt-2 text-gray-600 text-xs">
+              Website by{" "}
+              <a
+                href="https://www.metatapdigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#4CAF50] transition-colors"
+              >
+                MetaTap Digital
+              </a>
+            </p>
           </div>
         </div>
       </footer>
