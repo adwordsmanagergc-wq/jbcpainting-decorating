@@ -35,4 +35,5 @@
 
 .jbc-tip { background: #0F2219; color: #fff; border: 0; border-radius: 9999px; padding: 4px 10px; font-weight: 600; font-size: 12px; box-shadow: 0 4px 12px rgba(15,34,25,.25); }
 .jbc-tip::before { border-top-color: #0F2219 !important; }
+.jbc-tiles { filter: saturate(0.35) brightness(1.05) contrast(0.95); }
 .leaflet-interactive { cursor: pointer; }
