@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Leaf, Award, Instagram } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Leaf, Award, Instagram, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { business, reviews } from "@/lib/business";
 import { photo } from "@/lib/gallery";
@@ -18,7 +18,7 @@ import { AreaMap } from "@/components/site/AreaMap";
 
 const faqs = [
   { question: "How much does it cost to paint a house on the Central Coast?", answer: "As a 2026 guide, interior walls cost about $18–$35 per m². A full interior repaint of a 3-bedroom home (walls, ceilings and trims) is typically $6,000–$10,500, and a single-storey exterior repaint is usually $4,500–$14,000 depending on the substrate, condition and access. We provide free, itemised quotes so you know the exact cost up front." },
-  { question: "Which suburbs do you service?", answer: `Every suburb on the Central Coast — from Patonga, Umina Beach and Woy Woy in the south, through Gosford, Erina and Terrigal, The Entrance and Wyong, up to Toukley, Budgewoi, Lake Munmorah and Gwandalan, plus the hinterland. North of that we cover Lake Macquarie, from Wyee and Morisset to Toronto, Swansea, Belmont and Warners Bay, and projects across Newcastle. There are ${allSuburbs.length} suburb pages on this site with local advice for each.` },
+  { question: "Which suburbs do you service?", answer: `Every suburb on the Central Coast — from Patonga, Umina Beach and Woy Woy in the south, through Gosford, Erina and Terrigal, The Entrance and Wyong, up to Toukley, Budgewoi, Lake Munmorah and Gwandalan, plus the hinterland. North of that we cover Lake Macquarie, from Wyee and Morisset to Toronto, Swansea, Belmont and Warners Bay, and projects across Newcastle. South of the Hawkesbury we paint from Brooklyn, Berowra and Hornsby to Galston, Dural, Wisemans Ferry and Pittwater, from Mona Vale to Palm Beach. There are ${allSuburbs.length} suburb pages on this site with local advice for each.` },
   { question: "Are you licensed and insured?", answer: "Yes. JBC Painting & Decorating is licensed with NSW Fair Trading and carries full public liability insurance. We're happy to provide certificates before work begins." },
   { question: "What paint brands do you use?", answer: "We use Dulux and Haymes exclusively — two of Australia's most trusted premium paint brands, both with strong manufacturer warranties and coastal-grade exterior ranges." },
   { question: "How quickly can you quote and start?", answer: "Most on-site quotes are booked within a few days and written quotes are delivered within 48 hours. Start dates depend on the season, but we'll always give you a clear timeframe." },
@@ -208,29 +208,28 @@ export default function HomePage() {
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start">
           <div>
             <span className="eyebrow">Service areas</span>
-            <h2 className="h-section mt-4">Every suburb from the Central Coast to Newcastle</h2>
-            <p className="lead mt-5">Based in Kariong, we paint homes from Patonga to Gwandalan, right around Lake Macquarie and across Newcastle. Choose your suburb for local advice, pricing and FAQs.</p>
-            <div className="mt-8 space-y-6">
+            <h2 className="h-section mt-4">Every suburb from Hornsby to Newcastle</h2>
+            <p className="lead mt-5">Based in Kariong, we paint homes from Hornsby, Pittwater and the Hawkesbury River, right across the Central Coast and Lake Macquarie, up to Newcastle. Open a region to find your suburb.</p>
+            <div className="mt-8 divide-y divide-ink/10 overflow-hidden rounded-3xl bg-cream ring-1 ring-ink/5">
               {regions.map((g) => (
-                <div key={g.region}>
-                  <h3 className="flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-widest text-stone-400"><MapPin className="h-4 w-4" /> {g.region}</h3>
-                  <ul className="mt-3 flex flex-wrap gap-2">
-                    {g.items.slice(0, 7).map((s) => (
+                <details key={g.region} className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 transition-colors hover:bg-brand-50 [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-center gap-2.5 font-semibold text-ink"><MapPin className="h-4 w-4 flex-none text-brand" aria-hidden /> {g.region}</span>
+                    <span className="flex items-center gap-2 text-sm text-stone-400">
+                      {g.items.length}
+                      <ChevronDown className="h-4 w-4 transition-transform duration-300 group-open:rotate-180" aria-hidden />
+                    </span>
+                  </summary>
+                  <ul className="flex flex-wrap gap-2 px-5 pb-5">
+                    {g.items.map((s) => (
                       <li key={s.slug}>
-                        <Link href={`/painter/${s.slug}`} className="inline-block rounded-full border border-ink/10 bg-cream px-3.5 py-1.5 text-sm font-medium text-ink/80 transition-colors hover:border-brand hover:bg-brand hover:text-white">
+                        <Link href={`/painter/${s.slug}`} className="inline-block rounded-full border border-ink/10 bg-white px-3.5 py-1.5 text-sm font-medium text-ink/80 transition-colors hover:border-brand hover:bg-brand hover:text-white">
                           {s.name}
                         </Link>
                       </li>
                     ))}
-                    {g.items.length > 7 && (
-                      <li>
-                        <Link href={`/areas#${g.region.toLowerCase().replace(/[^a-z]+/g, "-")}`} className="inline-block px-2 py-1.5 text-sm font-semibold text-brand-700 hover:underline">
-                          +{g.items.length - 7} more
-                        </Link>
-                      </li>
-                    )}
                   </ul>
-                </div>
+                </details>
               ))}
             </div>
           </div>
