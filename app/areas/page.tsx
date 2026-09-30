@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, ChevronDown, MapPin } from "lucide-react";
 import { pageMeta } from "@/lib/meta";
-import { allSuburbs, centralCoastSuburbs, lakeMacquarieSuburbs, suburbsByRegion } from "@/lib/areas";
+import { allSuburbs, centralCoastSuburbs, lakeMacquarieSuburbs, sydneyNorthSuburbs, suburbsByRegion } from "@/lib/areas";
 import { pins } from "@/lib/pins";
 import { photo } from "@/lib/gallery";
 import { PageHero } from "@/components/site/PageHero";
@@ -11,8 +11,8 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { JsonLd } from "@/components/site/JsonLd";
 import { business } from "@/lib/business";
 
-const title = "Service Areas | Central Coast, Lake Macquarie & Newcastle Painters | JBC";
-const description = `Painters for every Central Coast suburb — ${centralCoastSuburbs.length} local pages from Patonga to Gwandalan — plus ${lakeMacquarieSuburbs.length} Lake Macquarie suburbs and Newcastle. Find your suburb and get a free quote.`;
+const title = "Service Areas | Hornsby to Newcastle Painters | JBC Painting";
+const description = `Painters for ${allSuburbs.length} suburbs from Hornsby, Pittwater and the Hawkesbury, across the Central Coast and Lake Macquarie to Newcastle. Find yours and get a free quote.`;
 
 export const metadata: Metadata = pageMeta({ title, description, path: "/areas" });
 
@@ -34,8 +34,8 @@ export default function AreasPage() {
       <PageHero
         crumbs={[{ name: "Home", href: "/" }, { name: "Areas", href: "/areas" }]}
         eyebrow="Service areas"
-        title="Painters from the Central Coast to Newcastle"
-        lead={`Based in Kariong, we paint homes and businesses in all ${centralCoastSuburbs.length} Central Coast suburbs, ${lakeMacquarieSuburbs.length} Lake Macquarie suburbs and across Newcastle. Find your suburb below for local advice, pricing and FAQs.`}
+        title="Painters from Hornsby to Newcastle"
+        lead={`Based in Kariong, we paint homes and businesses in all ${centralCoastSuburbs.length} Central Coast suburbs, ${lakeMacquarieSuburbs.length} Lake Macquarie suburbs, ${sydneyNorthSuburbs.length} suburbs from the Hawkesbury River to Hornsby and Pittwater, and across Newcastle. Tap a region to see its suburbs.`}
         photo={photo("jbc-22-exterior-queenslander.jpg")}
       />
 
@@ -53,17 +53,22 @@ export default function AreasPage() {
         <div className="container-x">
           <AreaMap pins={pins} activeSlug="kariong" height={560} />
 
-          <div className="mt-20 space-y-16">
+          <div className="mt-16 space-y-4">
             {groups.map((g) => (
-              <section key={g.region} id={toId(g.region)} className="scroll-mt-40">
-                <div className="flex flex-col justify-between gap-2 border-b border-ink/10 pb-5 md:flex-row md:items-end">
-                  <div>
-                    <h2 className="text-3xl font-semibold md:text-4xl">{g.region}</h2>
-                    <p className="mt-2 max-w-2xl text-stone">{g.blurb}</p>
-                  </div>
-                  <span className="text-sm font-semibold text-stone-400">{g.items.length} suburbs</span>
-                </div>
-                <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <details key={g.region} id={toId(g.region)} className="group scroll-mt-40 overflow-hidden rounded-3xl bg-white shadow-card ring-1 ring-ink/5 open:ring-brand/30">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-7 [&::-webkit-details-marker]:hidden">
+                  <span>
+                    <h2 className="text-2xl font-semibold md:text-3xl">{g.region}</h2>
+                    <span className="mt-1.5 block max-w-2xl text-sm text-stone md:text-base">{g.blurb}</span>
+                  </span>
+                  <span className="flex flex-none items-center gap-3">
+                    <span className="hidden rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700 sm:inline">{g.items.length} suburbs</span>
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-cream text-ink transition-transform duration-300 group-open:rotate-180" aria-hidden>
+                      <ChevronDown className="h-5 w-5" />
+                    </span>
+                  </span>
+                </summary>
+                <ul className="grid gap-3 border-t border-ink/5 bg-cream/60 p-6 sm:grid-cols-2 md:p-7 lg:grid-cols-4">
                   {g.items.map((s) => (
                     <li key={s.slug}>
                       <Link href={`/painter/${s.slug}`} className="group flex h-full items-center justify-between gap-3 rounded-2xl bg-white px-4 py-3.5 shadow-card ring-1 ring-ink/5 transition-all hover:-translate-y-0.5 hover:bg-forest hover:text-white">
@@ -79,10 +84,17 @@ export default function AreasPage() {
                     </li>
                   ))}
                 </ul>
-              </section>
+              </details>
             ))}
           </div>
-          <p className="mx-auto mt-20 max-w-2xl text-center text-stone">Don&rsquo;t see your suburb? Call {business.phone} — if you&rsquo;re on the Central Coast or in Newcastle, we can almost certainly help.</p>
+          <script
+            // Open the matching region when arriving via /areas#region or tapping a region chip.
+            dangerouslySetInnerHTML={{
+              __html:
+                "(function(){function o(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var d=document.getElementById(h);if(d&&d.tagName==='DETAILS'){d.open=true;d.scrollIntoView({block:'start'});}}window.addEventListener('hashchange',o);o();})();",
+            }}
+          />
+          <p className="mx-auto mt-20 max-w-2xl text-center text-stone">Don&rsquo;t see your suburb? Call {business.phone}. If you&rsquo;re between Hornsby and Newcastle, we can almost certainly help.</p>
         </div>
       </section>
       <CtaBanner />
