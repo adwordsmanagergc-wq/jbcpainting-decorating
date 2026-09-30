@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "JBC Painting & Decorating",
     short_name: "JBC Painting",
-    description: "Central Coast painters based in Kariong NSW.",
+    description: "Painters based in Kariong NSW, servicing the Central Coast & Newcastle.",
     start_url: "/",
     display: "standalone",
     background_color: "#F7F2EA",

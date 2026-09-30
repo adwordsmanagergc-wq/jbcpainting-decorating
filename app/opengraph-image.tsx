@@ -9,7 +9,7 @@ export default function OgImage() {
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "#173526", color: "#fff", padding: 72 }}>
-        <div style={{ display: "flex", fontSize: 28, color: "#D3E9D7", letterSpacing: 4, textTransform: "uppercase" }}>Kariong · Central Coast NSW</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#D3E9D7", letterSpacing: 4, textTransform: "uppercase" }}>Kariong · Central Coast & Newcastle</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 84, fontWeight: 800, lineHeight: 1.02 }}>JBC Painting</div>
           <div style={{ fontSize: 84, fontWeight: 800, lineHeight: 1.02, color: "#D68A3A" }}>& Decorating</div>
