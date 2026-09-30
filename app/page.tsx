@@ -64,7 +64,7 @@ export default function HomePage() {
               Painter &amp; Decorator on the <span className="brush-underline italic text-brand-700">Central Coast</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone md:text-xl">
-              Based in Kariong, servicing the Central Coast &amp; Newcastle. Licensed and insured, with {`${business.yearsExperience} years`} of flawless interior, exterior and roof painting for homes and businesses.
+              Based in Kariong, servicing the Central Coast &amp; Newcastle. Licensed and insured, with {`${business.yearsExperience} years of flawless`} interior, exterior and roof painting for homes and businesses.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="#quote" className="btn-primary !px-8 !py-4 !text-lg">Get a free quote <ArrowRight className="h-5 w-5" /></Link>
