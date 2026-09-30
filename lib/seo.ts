@@ -9,7 +9,7 @@ export function getSuburbMetadata(suburb: { slug: string; name: string; postcode
       ? `Painter ${suburb.name} NSW ${suburb.postcode} | JBC Painting & Decorating`
       : `Painter ${suburb.name} NSW | JBC Painting & Decorating`;
   const description = lakeMac
-    ? `House painter for ${suburb.name}, Lake Macquarie. Interior, exterior & roof painting with Dulux & Haymes. Licensed, insured, 20+ yrs. Free quotes: ${business.phone}.`
+    ? `Painter for ${suburb.name}, Lake Macquarie. Interior, exterior & roof painting with Dulux & Haymes. Licensed, insured, 20+ yrs. Free quotes: ${business.phone}.`
     : newcastle
     ? `House painter for ${suburb.name}. Interior, exterior & roof painting with Dulux & Haymes. Licensed, insured, 20+ yrs. Free itemised quotes: ${business.phone}.`
     : `Local painter in ${suburb.name}. Interior, exterior & roof painting with Dulux & Haymes. Licensed, insured, 5-star rated. Free quote: ${business.phone}.`;

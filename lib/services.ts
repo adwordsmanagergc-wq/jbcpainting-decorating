@@ -74,7 +74,7 @@ export const services: Service[] = [
     slug: "exterior-painting",
     name: "Exterior Painting",
     icon: "building",
-    image: "jbc-06-exterior-two-storey-facade.jpg",
+    image: "jbc-12-exterior-heritage-cottage.jpg",
     metaTitle: "Exterior House Painters Central Coast | JBC Painting",
     metaDescription:
       "Exterior house painting on the Central Coast — weatherboard, render, brick & fibro. Coastal-grade Dulux & Haymes systems. Free quote: 0402 360 514.",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     slug: "roof-painting",
     name: "Roof Painting",
     icon: "roof",
-    image: "jbc-23-roof-green-colorbond.jpg",
+    image: "jbc-24-roof-painting-in-progress.jpg",
     metaTitle: "Roof Painting Central Coast | Tile & Metal Roofs | JBC",
     metaDescription:
       "Roof painting & restoration on the Central Coast — tile & Colorbond roofs. Pressure clean, repairs & membrane coatings. Free quote: 0402 360 514.",
@@ -266,7 +266,7 @@ export const services: Service[] = [
     slug: "new-home-painting",
     name: "New Home Painting",
     icon: "key",
-    image: "jbc-28-exterior-new-home-facade.jpg",
+    image: "jbc-07-exterior-two-storey-home.jpg",
     metaTitle: "New Home Painters Central Coast | Builders | JBC",
     metaDescription:
       "Painting for new homes, extensions & renovations on the Central Coast. Reliable painters for builders & owner-builders. Call 0402 360 514.",
