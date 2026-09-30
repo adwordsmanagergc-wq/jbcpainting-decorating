@@ -9,7 +9,9 @@ export interface Suburb {
   uniqueSellingPoints: string[];
   nearbySuburbs: string[];
   faqs: { question: string; answer: string }[];
-  testimonials: { name: string; suburb: string; rating: number; text: string }[];
+  testimonials?: { name: string; suburb: string; rating: number; text: string }[];
+  region?: string;
+  atAGlance?: { homes: string; exposure: string; paintSystem: string; typicalJob: string };
 }
 
 export const suburbs: Suburb[] = [

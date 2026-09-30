@@ -35,9 +35,10 @@ export function Footer() {
           <div>
             <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Popular areas</h2>
             <ul className="mt-5 grid grid-cols-1 gap-3">
-              {allSuburbs.slice(0, 10).map((s) => (
+              {allSuburbs.slice(0, 9).map((s) => (
                 <li key={s.slug}><Link href={`/painter/${s.slug}`} className="hover:text-white">Painter {s.name}</Link></li>
               ))}
+              <li><Link href="/painter/newcastle" className="hover:text-white">Painter Newcastle</Link></li>
               <li><Link href="/areas" className="font-semibold text-brand-100 hover:text-white">All {allSuburbs.length} areas →</Link></li>
             </ul>
           </div>
@@ -47,7 +48,7 @@ export function Footer() {
             <ul className="mt-5 space-y-4">
               <li className="flex gap-3"><Phone className="mt-0.5 h-5 w-5 flex-none text-brand-100" /><a href={business.phoneHref} className="text-lg font-semibold text-white hover:underline">{business.phone}</a></li>
               <li className="flex gap-3"><Mail className="mt-0.5 h-5 w-5 flex-none text-brand-100" /><a href={`mailto:${business.email}`} className="hover:text-white">{business.email}</a></li>
-              <li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 flex-none text-brand-100" />Based in {business.address}<br />Servicing the NSW Central Coast</li>
+              <li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 flex-none text-brand-100" />Based in {business.address}<br />Servicing the Central Coast &amp; Newcastle</li>
               <li className="flex gap-3"><Clock className="mt-0.5 h-5 w-5 flex-none text-brand-100" />{business.hours}</li>
             </ul>
           </div>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/meta";
 import { Check } from "lucide-react";
-import { business, projectImages, reviews } from "@/lib/business";
+import { business, reviews } from "@/lib/business";
+import { photo } from "@/lib/gallery";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Process } from "@/components/site/Process";
@@ -31,8 +32,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="A local painting business, built on referrals"
         lead={`JBC Painting & Decorating is a Kariong-based painting company with ${business.yearsExperience} years' experience in residential, commercial, strata and new-home painting across the Central Coast.`}
-        image={projectImages[6]}
-        imageAlt="JBC Painting & Decorating at work"
+        photo={photo("jbc-24-roof-painting-in-progress.jpg")}
       />
       <section className="section">
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:items-center">

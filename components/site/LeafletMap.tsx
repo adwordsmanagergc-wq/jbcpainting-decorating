@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 
 export type Pin = { name: string; slug: string; lat: number; lng: number };
 
-export default function LeafletMap({ pins, activeSlug, height = 520 }: { pins: Pin[]; activeSlug?: string; height?: number }) {
+export default function LeafletMap({ pins, activeSlug, focusSlugs, height = 520 }: { pins: Pin[]; activeSlug?: string; focusSlugs?: string[]; height?: number }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -19,12 +19,13 @@ export default function LeafletMap({ pins, activeSlug, height = 520 }: { pins: P
         maxZoom: 18,
       }).addTo(map);
 
-      map.fitBounds(L.latLngBounds(pins.map((p) => [p.lat, p.lng])), { padding: [30, 30] });
+      const focus = focusSlugs?.length ? pins.filter((p) => focusSlugs.includes(p.slug)) : pins;
+      map.fitBounds(L.latLngBounds(focus.map((p) => [p.lat, p.lng])), { padding: [40, 40], maxZoom: 13 });
 
       pins.forEach((p) => {
         const active = p.slug === activeSlug;
         const marker = L.circleMarker([p.lat, p.lng], {
-          radius: active ? 10 : 7,
+          radius: active ? 10 : pins.length > 60 ? 5 : 7,
           color: "#fff",
           weight: 2,
           fillColor: active ? "#D68A3A" : "#2E8B47",
@@ -33,14 +34,14 @@ export default function LeafletMap({ pins, activeSlug, height = 520 }: { pins: P
         marker.bindTooltip(`Painter ${p.name}`, { permanent: active, direction: "top", offset: [0, -8], className: "jbc-tip" });
         marker.on("click", () => (window.location.href = `/painter/${p.slug}`));
         marker.on("mouseover", () => marker.setRadius(10));
-        marker.on("mouseout", () => marker.setRadius(active ? 10 : 7));
+        marker.on("mouseout", () => marker.setRadius(active ? 10 : pins.length > 60 ? 5 : 7));
       });
     });
     return () => {
       cancelled = true;
       map?.remove();
     };
-  }, [pins, activeSlug]);
+  }, [pins, activeSlug, focusSlugs]);
 
   return <div ref={ref} style={{ height }} className="w-full" />;
 }

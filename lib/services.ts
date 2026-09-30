@@ -1,10 +1,10 @@
-export type ServiceIcon = "home" | "building" | "roof" | "store" | "apartment" | "key" | "brush";
+export type ServiceIcon = "home" | "building" | "roof" | "store" | "apartment" | "key" | "brush" | "deck";
 
 export interface Service {
   slug: string;
   name: string;
   icon: ServiceIcon;
-  image: number;
+  image: string;
   metaTitle: string;
   metaDescription: string;
   h1: string;
@@ -22,7 +22,7 @@ export const services: Service[] = [
     slug: "interior-painting",
     name: "Interior Painting",
     icon: "home",
-    image: 0,
+    image: "jbc-20-interior-living-room.jpg",
     metaTitle: "Interior Painters Central Coast | Walls, Ceilings & Trims | JBC",
     metaDescription:
       "Interior painters on the Central Coast — walls, ceilings, doors & trims. Low-VOC Dulux & Haymes paints, spotless clean-up. Free quote: 0402 360 514.",
@@ -74,7 +74,7 @@ export const services: Service[] = [
     slug: "exterior-painting",
     name: "Exterior Painting",
     icon: "building",
-    image: 1,
+    image: "jbc-06-exterior-two-storey-facade.jpg",
     metaTitle: "Exterior House Painters Central Coast | JBC Painting",
     metaDescription:
       "Exterior house painting on the Central Coast — weatherboard, render, brick & fibro. Coastal-grade Dulux & Haymes systems. Free quote: 0402 360 514.",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     slug: "roof-painting",
     name: "Roof Painting",
     icon: "roof",
-    image: 2,
+    image: "jbc-23-roof-green-colorbond.jpg",
     metaTitle: "Roof Painting Central Coast | Tile & Metal Roofs | JBC",
     metaDescription:
       "Roof painting & restoration on the Central Coast — tile & Colorbond roofs. Pressure clean, repairs & membrane coatings. Free quote: 0402 360 514.",
@@ -176,7 +176,7 @@ export const services: Service[] = [
     slug: "commercial-painting",
     name: "Commercial Painting",
     icon: "store",
-    image: 3,
+    image: "jbc-11-commercial-restaurant-interior.jpg",
     metaTitle: "Commercial Painters Central Coast | JBC Painting",
     metaDescription:
       "Commercial painting on the Central Coast — offices, shops, cafés, medical & industrial sites. After-hours work, SWMS & full insurance. Free quote: 0402 360 514.",
@@ -221,7 +221,7 @@ export const services: Service[] = [
     slug: "strata-painting",
     name: "Strata Painting",
     icon: "apartment",
-    image: 4,
+    image: "jbc-04-exterior-townhouses.jpg",
     metaTitle: "Strata Painters Central Coast | Units & Villas | JBC",
     metaDescription:
       "Strata painting for Central Coast units, villas & townhouses — common areas, stairwells & exteriors. Itemised quotes for committees. Call 0402 360 514.",
@@ -266,7 +266,7 @@ export const services: Service[] = [
     slug: "new-home-painting",
     name: "New Home Painting",
     icon: "key",
-    image: 5,
+    image: "jbc-28-exterior-new-home-facade.jpg",
     metaTitle: "New Home Painters Central Coast | Builders | JBC",
     metaDescription:
       "Painting for new homes, extensions & renovations on the Central Coast. Reliable painters for builders & owner-builders. Call 0402 360 514.",
@@ -308,7 +308,7 @@ export const services: Service[] = [
     slug: "feature-walls-decorative-finishes",
     name: "Feature Walls & Decorative Finishes",
     icon: "brush",
-    image: 6,
+    image: "jbc-05-interior-staircase.jpg",
     metaTitle: "Feature Walls & Decorative Painting Central Coast | JBC Painting",
     metaDescription:
       "Feature walls, limewash, texture coatings & decorative paint finishes on the Central Coast. Colour consultation included. Free quote — call JBC on 0402 360 514.",
@@ -340,6 +340,49 @@ export const services: Service[] = [
     faqs: [
       { question: "Can you help me choose a colour?", answer: "Yes — colour consultation is included free with every quote. We'll bring samples and help you test them in your own light." },
       { question: "Are limewash finishes durable?", answer: "Modern limewash-look paints are durable for interiors and can be sealed in high-traffic areas. We'll recommend the right product for your space." },
+    ],
+  },
+  {
+    slug: "deck-staining",
+    name: "Deck Staining & Timber Finishes",
+    icon: "deck",
+    image: "jbc-25-deck-stain-finish.jpg",
+    metaTitle: "Deck Staining Central Coast | Decks, Pergolas & Timber | JBC",
+    metaDescription:
+      "Deck staining & oiling on the Central Coast — hardwood decks, pergolas, stairs & screens. Sand, clean & seal with UV-stable finishes. Free quote: 0402 360 514.",
+    h1: "Deck Staining & Timber Finishes",
+    tagline: "Bring grey, weathered timber back to rich, protected colour.",
+    summary: "Hardwood decks, pergolas, stairs and screens cleaned, sanded and stained or oiled.",
+    intro: [
+      "Central Coast sun and salt turn untreated decks silver-grey within a season, and dry timber soon starts to split, cup and splinter. A proper clean, sand and stain restores the colour and, more importantly, protects the timber from moisture and UV.",
+      "We restore hardwood and treated-pine decks, pergolas, stairs, balustrades and privacy screens — from beach-house decks in Umina and Avoca to bushland entertaining areas in Kariong and Somersby.",
+    ],
+    includes: [
+      "Deck cleaning & tannin/grey-timber treatment",
+      "Machine sanding & hand-sanding of edges",
+      "Nail punching & board replacement advice",
+      "Penetrating oils or pigmented stains",
+      "Pergolas, stairs, handrails & screens",
+      "Painted balustrades & posts",
+    ],
+    sections: [
+      {
+        heading: "Oil, stain or paint?",
+        body: "Penetrating deck oils bring out the grain and are easy to maintain, pigmented stains add UV protection and hide weathering, and solid paint suits balustrades and posts. We'll recommend the right option for your timber, exposure and how much upkeep you want.",
+      },
+      {
+        heading: "Maintenance that pays off",
+        body: "A deck recoated every 12–24 months never needs a heavy restoration. We can set up a maintenance recoat so your deck stays looking new for years.",
+      },
+    ],
+    priceGuide: [
+      { item: "Small deck (up to 20 m²)", range: "$900 – $1,800" },
+      { item: "Medium deck (20–40 m²)", range: "$1,800 – $3,500" },
+      { item: "Pergola / stairs (add-on)", range: "$400 – $1,500" },
+    ],
+    faqs: [
+      { question: "How often should a deck be re-stained?", answer: "On the Central Coast, exposed decks generally need a maintenance coat every 12–24 months. Covered decks last longer." },
+      { question: "Can you fix grey, weathered timber?", answer: "Usually, yes. A deck cleaner and brightener followed by sanding removes the grey surface layer and prepares the timber to take stain evenly." },
     ],
   },
 ];

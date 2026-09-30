@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Check } from "lucide-react";
-import { business, projectImages } from "@/lib/business";
+import { business } from "@/lib/business";
+import { photo, photosFor, serviceCategory } from "@/lib/gallery";
 import { services, getService } from "@/lib/services";
 import { allSuburbs } from "@/lib/areas";
 import { serviceSchema } from "@/lib/schema";
@@ -45,8 +46,7 @@ export default async function ServicePage({ params }: Props) {
         eyebrow={`${s.name} · Central Coast`}
         title={s.h1}
         lead={s.tagline}
-        image={projectImages[s.image % projectImages.length]}
-        imageAlt={`${s.name} project by JBC Painting & Decorating`}
+        photo={photo(s.image)}
       />
 
       <section className="section">
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="pb-20"><Gallery caption={`${s.name} by JBC Painting & Decorating`} /></section>
+      <section className="pb-20"><Gallery items={photosFor(serviceCategory[s.slug], 10)} /></section>
 
       <section className="section bg-forest">
         <div className="container-x">

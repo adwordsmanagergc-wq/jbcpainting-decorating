@@ -1,7 +1,7 @@
-import { Home, Building2, House, Store, Building, KeyRound, Paintbrush, type LucideProps } from "lucide-react";
+import { Home, Building2, House, Store, Building, KeyRound, Paintbrush, Fence, type LucideProps } from "lucide-react";
 import type { ServiceIcon as ServiceIconKey } from "@/lib/services";
 
-const map = { home: Home, building: Building2, roof: House, store: Store, apartment: Building, key: KeyRound, brush: Paintbrush };
+const map = { home: Home, building: Building2, roof: House, store: Store, apartment: Building, key: KeyRound, brush: Paintbrush, deck: Fence };
 
 export function ServiceIcon({ name, ...props }: { name: ServiceIconKey } & LucideProps) {
   const Icon = map[name];

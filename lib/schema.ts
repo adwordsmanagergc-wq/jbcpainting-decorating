@@ -39,6 +39,7 @@ export function businessSchema() {
     })),
     areaServed: [
       { "@type": "AdministrativeArea", name: "Central Coast, NSW" },
+      { "@type": "City", name: "Newcastle, NSW" },
       ...allSuburbs.map((s) => ({ "@type": "Place", name: `${s.name} NSW ${s.postcode}` })),
     ],
     knowsAbout: ["Interior painting", "Exterior painting", "Roof painting", "Strata painting", "Commercial painting", "Colour consultation", "Lead-safe paint removal"],

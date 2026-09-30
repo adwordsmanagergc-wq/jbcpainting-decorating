@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Leaf, Award, Instagram } from "lucide-react";
-import { business, projectImages, reviews } from "@/lib/business";
+import Image from "next/image";
+import { business, reviews } from "@/lib/business";
+import { photo } from "@/lib/gallery";
 import { services } from "@/lib/services";
 import { suburbsByRegion, allSuburbs } from "@/lib/areas";
 import { pins } from "@/lib/pins";
@@ -16,7 +18,7 @@ import { AreaMap } from "@/components/site/AreaMap";
 
 const faqs = [
   { question: "How much does it cost to paint a house on the Central Coast?", answer: "As a 2026 guide, interior walls cost about $18–$35 per m². A full interior repaint of a 3-bedroom home (walls, ceilings and trims) is typically $6,000–$10,500, and a single-storey exterior repaint is usually $4,500–$14,000 depending on the substrate, condition and access. We provide free, itemised quotes so you know the exact cost up front." },
-  { question: "Which suburbs do you service?", answer: `We're based in Kariong and service the southern and central Central Coast — including Gosford, West Gosford, Point Clare, Tascott, Koolewong, Woy Woy, Umina Beach, Ettalong Beach, Erina, Terrigal, Wamberal, Avoca Beach, Kincumber, Green Point, Narara, Wyoming, Somersby and surrounds (${allSuburbs.length}+ suburbs in total).` },
+  { question: "Which suburbs do you service?", answer: `Every suburb on the Central Coast — from Patonga, Umina Beach and Woy Woy in the south, through Gosford, Erina and Terrigal, The Entrance and Wyong, up to Toukley, Budgewoi, Lake Munmorah and Gwandalan — plus the hinterland. We also take on projects across Newcastle. There are ${allSuburbs.length} suburb pages on this site with local advice for each.` },
   { question: "Are you licensed and insured?", answer: "Yes. JBC Painting & Decorating is licensed with NSW Fair Trading and carries full public liability insurance. We're happy to provide certificates before work begins." },
   { question: "What paint brands do you use?", answer: "We use Dulux and Haymes exclusively — two of Australia's most trusted premium paint brands, both with strong manufacturer warranties and coastal-grade exterior ranges." },
   { question: "How quickly can you quote and start?", answer: "Most on-site quotes are booked within a few days and written quotes are delivered within 48 hours. Start dates depend on the season, but we'll always give you a clear timeframe." },
@@ -25,7 +27,7 @@ const faqs = [
 
 const stats = [
   { value: business.yearsExperience, label: "Years of experience" },
-  { value: `${allSuburbs.length}+`, label: "Central Coast suburbs" },
+  { value: `${allSuburbs.length}+`, label: "Suburbs serviced" },
   { value: "5.0★", label: "Customer rating" },
   { value: "48hr", label: "Quote turnaround" },
 ];
@@ -37,6 +39,12 @@ const whyUs = [
   { icon: Clock, title: "On time, every time", text: "We turn up when we say we will and keep you updated from quote to final walkthrough." },
   { icon: Check, title: "Spotless sites", text: "Furniture, floors and gardens protected. We leave your home cleaner than we found it." },
   { icon: Award, title: "Workmanship guarantee", text: "If anything isn't right, we come back and make it right. Simple." },
+];
+
+const hero = [
+  photo("jbc-06-exterior-two-storey-facade.jpg"),
+  photo("jbc-20-interior-living-room.jpg"),
+  photo("jbc-12-exterior-heritage-cottage.jpg"),
 ];
 
 export default function HomePage() {
@@ -71,18 +79,15 @@ export default function HomePage() {
 
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="grid grid-cols-5 grid-rows-6 gap-3 md:gap-4" style={{ aspectRatio: "1 / 1" }}>
-              <div className="col-span-3 row-span-6 overflow-hidden rounded-[2rem] bg-cream-200 shadow-lift">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={projectImages[0]} alt="Freshly painted home by JBC Painting & Decorating, Central Coast" className="h-full w-full object-cover" fetchPriority="high" width={420} height={640} />
-              </div>
-              <div className="col-span-2 row-span-3 overflow-hidden rounded-[1.5rem] bg-cream-200 shadow-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={projectImages[1]} alt="Interior painting project by JBC in Kariong" className="h-full w-full object-cover" width={280} height={320} />
-              </div>
-              <div className="col-span-2 row-span-3 overflow-hidden rounded-[1.5rem] bg-cream-200 shadow-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={projectImages[2]} alt="Exterior repaint by JBC on the Central Coast" className="h-full w-full object-cover" width={280} height={320} />
-              </div>
+              {[
+                { p: hero[0], cls: "col-span-3 row-span-6 rounded-[2rem] shadow-lift", sizes: "(min-width: 1024px) 380px, 60vw" },
+                { p: hero[1], cls: "col-span-2 row-span-3 rounded-[1.5rem] shadow-card", sizes: "(min-width: 1024px) 250px, 40vw" },
+                { p: hero[2], cls: "col-span-2 row-span-3 rounded-[1.5rem] shadow-card", sizes: "(min-width: 1024px) 250px, 40vw" },
+              ].map(({ p, cls, sizes }, i) => (
+                <div key={p.src} className={`relative overflow-hidden bg-cream-200 ${cls}`}>
+                  <Image src={p.src} alt={p.alt} fill priority={i === 0} sizes={sizes} className="object-cover" />
+                </div>
+              ))}
             </div>
             <div className="absolute -bottom-6 left-4 flex items-center gap-4 rounded-2xl bg-white p-4 pr-6 shadow-lift ring-1 ring-ink/5 md:-left-8">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-forest font-display text-lg font-semibold text-white">{business.yearsExperience}</span>
@@ -127,8 +132,7 @@ export default function HomePage() {
                 className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift ${i === 0 ? "bg-forest text-white sm:col-span-2 lg:col-span-1 lg:row-span-2" : "card"}`}
               >
                 {i === 0 && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={projectImages[3]} alt="" className="absolute inset-0 h-full w-full object-cover opacity-30 transition-opacity group-hover:opacity-40" loading="lazy" />
+                  <Image src={photo(s.image).src} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover opacity-30 transition-opacity group-hover:opacity-40" />
                 )}
                 <div className="relative">
                   <span className={`grid h-12 w-12 place-items-center rounded-2xl ${i === 0 ? "bg-white/15 text-white" : "bg-brand-50 text-brand-700"}`}>
@@ -161,7 +165,7 @@ export default function HomePage() {
             <span className="eyebrow">Recent work</span>
             <h2 className="h-section mt-3">Real homes. Real Central Coast results.</h2>
           </div>
-          <a href={business.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-brand-700 hover:underline"><Instagram className="h-5 w-5" /> More on Instagram →</a>
+          <div className="flex flex-wrap gap-6"><Link href="/gallery" className="font-semibold text-brand-700 hover:underline">View full gallery →</Link><a href={business.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-brand-700 hover:underline"><Instagram className="h-5 w-5" /> More on Instagram →</a></div>
         </div>
         <Gallery />
       </section>
@@ -203,20 +207,27 @@ export default function HomePage() {
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start">
           <div>
             <span className="eyebrow">Service areas</span>
-            <h2 className="h-section mt-4">Local painters across the Central Coast</h2>
-            <p className="lead mt-5">Based in Kariong, we&rsquo;re minutes from Gosford, Brisbane Water, the Woy Woy Peninsula and the coastal suburbs of Erina and Terrigal. Choose your suburb for local advice, pricing and FAQs.</p>
+            <h2 className="h-section mt-4">Every Central Coast suburb — and Newcastle</h2>
+            <p className="lead mt-5">Based in Kariong, we paint homes from Patonga to Gwandalan and take on projects across Newcastle. Choose your suburb for local advice, pricing and FAQs.</p>
             <div className="mt-8 space-y-6">
               {regions.map((g) => (
                 <div key={g.region}>
                   <h3 className="flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-widest text-stone-400"><MapPin className="h-4 w-4" /> {g.region}</h3>
                   <ul className="mt-3 flex flex-wrap gap-2">
-                    {g.items.map((s) => (
+                    {g.items.slice(0, 7).map((s) => (
                       <li key={s.slug}>
                         <Link href={`/painter/${s.slug}`} className="inline-block rounded-full border border-ink/10 bg-cream px-3.5 py-1.5 text-sm font-medium text-ink/80 transition-colors hover:border-brand hover:bg-brand hover:text-white">
                           {s.name}
                         </Link>
                       </li>
                     ))}
+                    {g.items.length > 7 && (
+                      <li>
+                        <Link href={`/areas#${g.region.toLowerCase().replace(/[^a-z]+/g, "-")}`} className="inline-block px-2 py-1.5 text-sm font-semibold text-brand-700 hover:underline">
+                          +{g.items.length - 7} more
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                 </div>
               ))}

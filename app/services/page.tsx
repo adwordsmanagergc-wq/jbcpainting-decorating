@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/lib/services";
-import { projectImages } from "@/lib/business";
+import { photo } from "@/lib/gallery";
 import { PageHero } from "@/components/site/PageHero";
 import { ServiceIcon } from "@/components/site/Icons";
 import { CtaBanner } from "@/components/site/CtaBanner";
@@ -21,8 +21,7 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title="Painting services for Central Coast homes & businesses"
         lead="One local team for every surface — prepared properly and finished with premium Dulux & Haymes paints."
-        image={projectImages[4]}
-        imageAlt="Painting project by JBC Painting & Decorating"
+        photo={photo("jbc-13-exterior-white-home.jpg")}
       />
       <section className="section">
         <div className="container-x grid gap-6 md:grid-cols-2">
