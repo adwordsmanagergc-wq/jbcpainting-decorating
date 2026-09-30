@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Leaf, Award } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Leaf, Award, Instagram } from "lucide-react";
 import { business, projectImages, reviews } from "@/lib/business";
 import { services } from "@/lib/services";
 import { suburbsByRegion, allSuburbs } from "@/lib/areas";
@@ -161,7 +161,7 @@ export default function HomePage() {
             <span className="eyebrow">Recent work</span>
             <h2 className="h-section mt-3">Real homes. Real Central Coast results.</h2>
           </div>
-          <Link href="/contact" className="font-semibold text-brand-700 hover:underline">Start your project →</Link>
+          <a href={business.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-brand-700 hover:underline"><Instagram className="h-5 w-5" /> More on Instagram →</a>
         </div>
         <Gallery />
       </section>

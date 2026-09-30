@@ -16,6 +16,7 @@ export function businessSchema() {
     image: business.logo,
     telephone: business.phoneE164,
     email: business.email,
+    sameAs: [business.instagram],
     description:
       "JBC Painting & Decorating is a licensed, insured Central Coast painter based in Kariong NSW with 20+ years' experience in interior, exterior, roof, commercial, strata and new-home painting using Dulux and Haymes paints.",
     priceRange: "$$",

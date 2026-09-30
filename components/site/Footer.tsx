@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Instagram } from "lucide-react";
 import { business } from "@/lib/business";
 import { services } from "@/lib/services";
 import { allSuburbs } from "@/lib/areas";
@@ -19,6 +19,7 @@ export function Footer() {
               Licensed, insured Central Coast painters based in Kariong. {`${business.yearsExperience} years`} of interior, exterior, roof, strata and commercial painting with Dulux &amp; Haymes.
             </p>
             <Swatches className="mt-6" />
+            <a href={business.instagram} target="_blank" rel="noopener noreferrer" className="mt-6 flex items-center gap-2 font-semibold text-white hover:text-brand-100"><Instagram className="h-5 w-5" /> @jbc_painting_decorating</a>
           </div>
 
           <div>

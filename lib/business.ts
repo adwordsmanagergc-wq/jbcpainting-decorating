@@ -8,6 +8,7 @@ export const business = {
   phoneHref: "tel:0402360514",
   whatsapp: "https://wa.me/61402360514?text=Hi%20JBC%2C%20I%27d%20like%20a%20free%20quote",
   email: "info@jbcpainting.com.au",
+  instagram: "https://www.instagram.com/jbc_painting_decorating/",
   address: "Kariong, NSW 2250",
   locality: "Kariong",
   region: "NSW",
