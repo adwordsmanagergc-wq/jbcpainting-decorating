@@ -23,7 +23,7 @@ export const business = {
     { days: ["Saturday"], opens: "08:00", closes: "14:00" },
   ],
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://jbcpainting.com.au",
-  logo: `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.08-(1).jpeg`,
+  logo: "/images/jbc-logo.webp",
 };
 
 export const paintBrands = [
