@@ -26,18 +26,6 @@ export const business = {
   logo: `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.08-(1).jpeg`,
 };
 
-/** Real project photos supplied by JBC. */
-export const projectImages = [
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.15-(1).jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.15-(2).jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.14-(2).jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.14-(3).jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.15.jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.14.jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.10.jpeg`,
-  `${IMG_BASE}/WhatsApp-Image-2026-05-01-at-19.04.14-(1).jpeg`,
-];
-
 export const paintBrands = [
   { name: "Dulux", url: "https://www.dulux.com.au", logo: "/images/dulux-logo.webp" },
   { name: "Haymes Paint", url: "https://www.haymes.com.au", logo: "/images/haymes-logo.png" },
@@ -46,6 +34,7 @@ export const paintBrands = [
 export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Areas", href: "/areas" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Cost Guide", href: "/painting-cost-central-coast" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

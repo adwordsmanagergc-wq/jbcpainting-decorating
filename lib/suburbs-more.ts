@@ -50,20 +50,6 @@ export const moreSuburbs: Suburb[] = [
           "We use Dulux and Haymes exclusively. Both have exterior ranges that suit masonry, render and metal in the Brisbane Water climate, and low-odour interior ranges that work well in occupied units and offices.",
       },
     ],
-    testimonials: [
-      {
-        name: "Leanne T.",
-        suburb: "Gosford",
-        rating: 5,
-        text: "JBC repainted the common areas and balconies of our 12-unit block in Gosford. They kept every resident informed with notices, worked floor by floor, and the building looks years younger. Our strata committee was impressed with how organised they were.",
-      },
-      {
-        name: "Raj P.",
-        suburb: "Gosford",
-        rating: 5,
-        text: "We needed our office on Mann Street painted without losing a day of business. JBC did it over two weekends and we walked in on Monday to a clean, finished space. Great communication and a very tidy crew.",
-      },
-    ],
   },
   {
     slug: "east-gosford",
@@ -112,20 +98,6 @@ export const moreSuburbs: Suburb[] = [
         question: "Do you paint small unit blocks along Victoria Street?",
         answer:
           "Yes. We paint common-area stairwells, entry doors, balustrades and exteriors for small strata blocks. We work with your strata manager and give residents notice before work in shared areas.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Fiona D.",
-        suburb: "East Gosford",
-        rating: 5,
-        text: "Our 1950s weatherboard in East Gosford had peeling windows and years of old paint. JBC stripped and restored every window, filled the boards and painted the whole house. It looks like a proper character home again and the neighbours keep commenting.",
-      },
-      {
-        name: "Matt L.",
-        suburb: "East Gosford",
-        rating: 5,
-        text: "We bought an older place near the gallery and wanted the interior modernised. JBC removed the wallpaper in two rooms, patched all the cracks and painted throughout in soft whites. Clean, punctual and genuinely careful with our floors.",
       },
     ],
   },
@@ -178,20 +150,6 @@ export const moreSuburbs: Suburb[] = [
           "Yes, we're happy to quote for homes in the ecovillage. We can work to any product or colour guidelines the community has in place, and we can suggest low-VOC options that suit sustainable builds.",
       },
     ],
-    testimonials: [
-      {
-        name: "Chloe B.",
-        suburb: "Narara",
-        rating: 5,
-        text: "Our split-level home in Narara had flaking paint and mould on the side facing the hill. JBC treated it, sorted out the prep properly and repainted the entire exterior. Two winters on, it's still clean and solid.",
-      },
-      {
-        name: "Warren J.",
-        suburb: "Narara",
-        rating: 5,
-        text: "We asked for low-odour paints because of our kids' allergies and JBC were really helpful. They painted the whole inside of our Narara home in about a week, and there was barely any smell. Highly recommended.",
-      },
-    ],
   },
   {
     slug: "wyoming",
@@ -240,20 +198,6 @@ export const moreSuburbs: Suburb[] = [
         question: "How long will I be without access to rooms during an interior repaint?",
         answer:
           "We usually work through the house a few rooms at a time, so most families keep living at home. Bedrooms are often back in use the same evening, and a full interior for a three-to-four bedroom home generally takes four to seven working days.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Anthony G.",
-        suburb: "Wyoming",
-        rating: 5,
-        text: "The fascias and window frames on our brick home in Wyoming had gone grey and were flaking. JBC scraped, primed and repainted all the trim and the house looks brand new from the street. Fair price, quick work and they cleaned up every day.",
-      },
-      {
-        name: "Nicole & Sam R.",
-        suburb: "Wyoming",
-        rating: 5,
-        text: "JBC did our tiled roof and the interior of our Wyoming home. The roof looks fantastic and they helped us choose a warm white for the inside that made everything feel bigger. Great team to deal with.",
       },
     ],
   },
@@ -306,20 +250,6 @@ export const moreSuburbs: Suburb[] = [
           "Yes. Feature walls are one of the easiest ways to update a Springfield living room. We can help you pick a deep colour, a textured finish or a decorative effect that works with your furniture and lighting.",
       },
     ],
-    testimonials: [
-      {
-        name: "Karen S.",
-        suburb: "Springfield",
-        rating: 5,
-        text: "Our 1990s home in Springfield had cracked render and faded paint all over. JBC filled every crack, primed and painted the whole outside in a charcoal and white scheme. It has completely changed the look of the house.",
-      },
-      {
-        name: "Dean M.",
-        suburb: "Springfield",
-        rating: 5,
-        text: "JBC painted the inside of our double-storey home, including the high void over the stairs. They set up properly, worked safely and the finish is flawless. Great to deal with from quote to clean-up.",
-      },
-    ],
   },
   {
     slug: "green-point",
@@ -368,20 +298,6 @@ export const moreSuburbs: Suburb[] = [
         question: "Do you paint new extensions to match the existing house?",
         answer:
           "Yes. We can colour-match existing paint, or suggest repainting the whole elevation so old and new sections blend in. Fresh plaster and render are sealed first to make sure the colour is even.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Rebecca H.",
-        suburb: "Green Point",
-        rating: 5,
-        text: "Our Green Point house was built in the late 80s and had never been properly repainted. JBC did the whole exterior, trims and roof. The quote was clear, the team was respectful and the house now looks modern and fresh.",
-      },
-      {
-        name: "Josh W.",
-        suburb: "Green Point",
-        rating: 5,
-        text: "We went away for two weeks over the holidays and came home to a fully repainted interior. JBC sent us photos along the way and left everything spotless. Couldn't recommend them more.",
       },
     ],
   },
@@ -434,20 +350,6 @@ export const moreSuburbs: Suburb[] = [
           "Most roof restorations take three to five days, depending on the weather. That includes cleaning, drying time, repairs and coating. We won't coat a roof if rain is expected before it's dry.",
       },
     ],
-    testimonials: [
-      {
-        name: "Natalie C.",
-        suburb: "Kincumber",
-        rating: 5,
-        text: "Our home near the Kincumber shops sits on a steep block, and JBC set up scaffolding safely and professionally. They painted the whole exterior and fixed rust stains that had bothered us for years. Excellent result.",
-      },
-      {
-        name: "Paul E.",
-        suburb: "Kincumber",
-        rating: 5,
-        text: "JBC painted our small business on Avoca Drive over one weekend. The work was high quality, and they left everything clean and ready for opening on Monday. Would definitely use them again.",
-      },
-    ],
   },
   {
     slug: "saratoga",
@@ -496,20 +398,6 @@ export const moreSuburbs: Suburb[] = [
         question: "Do you paint interiors as well as exteriors in Saratoga?",
         answer:
           "Yes. We paint full interiors, including walls, ceilings, doors and joinery. In humid homes we often recommend a mould-resistant paint for bathrooms and laundries.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Margaret F.",
-        suburb: "Saratoga",
-        rating: 5,
-        text: "Our home faces the water in Saratoga and the salt had really taken its toll. JBC fixed the rusted areas, cleaned off the mould and repainted the whole house. It has held up beautifully through the wet season.",
-      },
-      {
-        name: "Chris N.",
-        suburb: "Saratoga",
-        rating: 5,
-        text: "JBC painted our boat shed and deck along with the house. They were careful near the water and used the right products for the conditions. A really professional crew.",
       },
     ],
   },
@@ -562,20 +450,6 @@ export const moreSuburbs: Suburb[] = [
           "We remove loose rust, treat the metal with a rust converter where needed, prime with a rust-inhibiting primer and finish with a tough exterior enamel. Regular rinsing to remove salt will also help protect the finish.",
       },
     ],
-    testimonials: [
-      {
-        name: "Emma J.",
-        suburb: "Avoca Beach",
-        rating: 5,
-        text: "Our Avoca Beach house faces straight onto the ocean and the old paint was failing fast. JBC stripped back the timber, fixed the rusty balustrades and repainted the whole house. It looks sharp and has handled a full summer of salt spray.",
-      },
-      {
-        name: "Ben T.",
-        suburb: "Avoca Beach",
-        rating: 5,
-        text: "We manage a holiday rental and JBC painted the entire interior in a week between bookings. They were quick, tidy and the place looks fantastic in the new listing photos.",
-      },
-    ],
   },
   {
     slug: "wamberal",
@@ -624,20 +498,6 @@ export const moreSuburbs: Suburb[] = [
         question: "Can you paint Colorbond or metal roofs?",
         answer:
           "Yes. We clean and treat metal roofs, prime any rusted areas and apply a roof coating designed for metal. It's a cost-effective way to refresh a faded roof before it needs replacing.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Sophie A.",
-        suburb: "Wamberal",
-        rating: 5,
-        text: "Our beachfront home in Wamberal needed an expert team. JBC handled the rust, sealed the timber and delivered a flawless finish. They were meticulous and respectful of our property.",
-      },
-      {
-        name: "Greg K.",
-        suburb: "Wamberal",
-        rating: 5,
-        text: "We updated the colours on our 1980s home up the hill in Wamberal and JBC were fantastic. Their colour advice was spot on, and the house looks modern and fresh.",
       },
     ],
   },
@@ -690,20 +550,6 @@ export const moreSuburbs: Suburb[] = [
           "We recommend a washable low-sheen paint from the Dulux or Haymes ranges for walls and a semi-gloss enamel for doors and trims. These finishes clean easily between guests and handle the extra wear of holiday use.",
       },
     ],
-    testimonials: [
-      {
-        name: "Lorraine P.",
-        suburb: "Ettalong Beach",
-        rating: 5,
-        text: "JBC repainted our unit block near the Ettalong waterfront. The communication with residents was excellent and the finish is very professional. Our strata committee is thrilled.",
-      },
-      {
-        name: "Mick D.",
-        suburb: "Ettalong Beach",
-        rating: 5,
-        text: "I own a small rental in Ettalong and JBC turned it around between tenants in just a few days. Clean, fair and reliable. I'll be using them again.",
-      },
-    ],
   },
   {
     slug: "pearl-beach",
@@ -752,20 +598,6 @@ export const moreSuburbs: Suburb[] = [
         question: "Is Pearl Beach outside your service area?",
         answer:
           "No. We regularly travel to Pearl Beach from our Kariong base. Travel is included in our quote, and we plan deliveries carefully to suit the narrow access road.",
-      },
-    ],
-    testimonials: [
-      {
-        name: "Helen W.",
-        suburb: "Pearl Beach",
-        rating: 5,
-        text: "We live in Sydney and use our Pearl Beach house on weekends. JBC organised everything, sent photos as they went and repainted the exterior beautifully. We didn't have to lift a finger.",
-      },
-      {
-        name: "Tom R.",
-        suburb: "Pearl Beach",
-        rating: 5,
-        text: "The shaded side of our Pearl Beach home had constant mould. JBC treated it, used the right paint and it has stayed clean ever since. Great job and very respectful of the garden.",
       },
     ],
   },

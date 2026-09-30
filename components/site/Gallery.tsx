@@ -1,21 +1,19 @@
-import { projectImages } from "@/lib/business";
+import Image from "next/image";
+import { photos, type Photo } from "@/lib/gallery";
 
-export function Gallery({ caption = "Recent painting project by JBC Painting & Decorating on the Central Coast" }: { caption?: string }) {
-  const imgs = [...projectImages, ...projectImages];
+export function Gallery({ items = photos.slice(0, 14) }: { items?: Photo[] }) {
+  const loop = [...items, ...items];
   return (
     <div className="group relative overflow-hidden" role="region" aria-label="Project gallery">
       <div className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused]">
-        {imgs.map((src, i) => (
-          <figure key={i} className="h-60 w-80 flex-none overflow-hidden rounded-2xl bg-cream-200 md:h-80 md:w-[26rem]" aria-hidden={i >= projectImages.length}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={i < projectImages.length ? `${caption} — photo ${i + 1}` : ""}
-              loading="lazy"
-              decoding="async"
-              width={416}
-              height={320}
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+        {loop.map((p, i) => (
+          <figure key={i} className="relative h-60 w-72 flex-none overflow-hidden rounded-2xl bg-cream-200 md:h-80 md:w-96" aria-hidden={i >= items.length}>
+            <Image
+              src={p.src}
+              alt={i < items.length ? p.alt : ""}
+              fill
+              sizes="(min-width: 768px) 384px, 288px"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </figure>
         ))}

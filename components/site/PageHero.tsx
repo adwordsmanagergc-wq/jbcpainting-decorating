@@ -1,5 +1,7 @@
 import { Phone, ShieldCheck, Clock, Award } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import type { Photo } from "@/lib/gallery";
 import { business } from "@/lib/business";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { Stars } from "./Icons";
@@ -9,16 +11,14 @@ export function PageHero({
   eyebrow,
   title,
   lead,
-  image,
-  imageAlt,
+  photo,
   children,
 }: {
   crumbs: { name: string; href: string }[];
   eyebrow?: string;
   title: React.ReactNode;
   lead?: React.ReactNode;
-  image?: string;
-  imageAlt?: string;
+  photo?: Photo;
   children?: React.ReactNode;
 }) {
   return (
@@ -42,11 +42,10 @@ export function PageHero({
           </ul>
           {children}
         </div>
-        {image && (
+        {photo && (
           <div className="relative hidden lg:block">
             <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-forest-700 shadow-lift ring-1 ring-white/10">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={image} alt={imageAlt ?? ""} className="h-full w-full object-cover" fetchPriority="high" width={560} height={700} />
+              <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} priority sizes="(min-width: 1024px) 560px, 100vw" className="h-full w-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-5 text-ink shadow-lift">
               <p className="font-display text-3xl font-semibold text-brand">{business.yearsExperience}</p>

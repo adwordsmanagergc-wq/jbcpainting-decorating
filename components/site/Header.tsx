@@ -23,7 +23,7 @@ export function Header() {
     <header className={`sticky top-0 z-50 transition-all ${scrolled || open ? "bg-cream/95 shadow-[0_1px_0_rgba(15,34,25,.08)] backdrop-blur" : "bg-cream"}`}>
       <div className="hidden bg-ink text-xs text-white/70 md:block">
         <div className="container-x flex h-9 items-center justify-between">
-          <span>Locally owned in Kariong · Servicing Gosford, Brisbane Water, the Peninsula &amp; Terrigal</span>
+          <span>Locally owned in Kariong · Servicing the whole Central Coast &amp; Newcastle</span>
           <span>{business.hours}</span>
         </div>
       </div>
