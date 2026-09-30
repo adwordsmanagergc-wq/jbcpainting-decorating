@@ -7,6 +7,9 @@ import { groupD } from "./suburbs/group-d";
 import { groupE } from "./suburbs/group-e";
 import { groupF } from "./suburbs/group-f";
 import { groupNewcastle } from "./suburbs/group-newcastle";
+import { groupSouth1 } from "./suburbs/group-south-1";
+import { groupSouth2 } from "./suburbs/group-south-2";
+import { groupSouth3 } from "./suburbs/group-south-3";
 import { groupLm1 } from "./suburbs/group-lm-1";
 import { groupLm2 } from "./suburbs/group-lm-2";
 import { groupLm3 } from "./suburbs/group-lm-3";
@@ -24,6 +27,9 @@ export const regions = [
   { name: "Wyong & Northern Corridor", blurb: "Established Wyong streets plus the fast-growing Warnervale and Hamlyn Terrace estates." },
   { name: "Budgewoi & Northern Lakes", blurb: "Lake and beach communities from Toukley and Norah Head to Lake Munmorah and Gwandalan." },
   { name: "Hinterland & Hawkesbury", blurb: "Acreage, farmhouses and river retreats across the Mangrove Mountain plateau, valleys and Hawkesbury." },
+  { name: "Hawkesbury River & Hills", blurb: "River villages, water-access homes and acreage from Brooklyn and Dangar Island up to Wisemans Ferry, plus Galston, Arcadia and Dural." },
+  { name: "Berowra to Hornsby", blurb: "Bush-edge ridgeline suburbs along the rail line from Berowra and Mount Kuring-gai down to Hornsby and Waitara." },
+  { name: "Pittwater & Northern Beaches", blurb: "Beach, bay and island homes from Palm Beach and Avalon to Mona Vale, plus the Terrey Hills and Duffys Forest acreage." },
   { name: "Morisset & Southern Lake", blurb: "Lakeside villages, peninsula streets and acreage from Wyee and Morisset around to Wangi Wangi, the closest of the Lake Macquarie suburbs to our Kariong base." },
   { name: "Toronto & Western Lake", blurb: "Toronto, the western bays and the old mining towns from Teralba and Speers Point up to Cardiff, Edgeworth and West Wallsend." },
   { name: "Swansea & Eastern Lake", blurb: "Beach, channel and lakefront suburbs from Catherine Hill Bay and Swansea up through Belmont and Warners Bay to Charlestown's fringe." },
@@ -49,6 +55,9 @@ export const allSuburbs: Suburb[] = [
   ...groupD,
   ...groupE,
   ...groupF,
+  ...groupSouth1,
+  ...groupSouth2,
+  ...groupSouth3,
   ...groupLm1,
   ...groupLm2,
   ...groupLm3,
@@ -64,7 +73,14 @@ export function isLakeMacquarie(s: Suburb) {
   return lakeMacquarieRegions.includes(s.region ?? "");
 }
 
-export const centralCoastSuburbs = allSuburbs.filter((s) => s.region !== "Newcastle" && !isLakeMacquarie(s));
+export const sydneyRegions = ["Hawkesbury River & Hills", "Berowra to Hornsby", "Pittwater & Northern Beaches"];
+
+export function isSydneyNorth(s: Suburb) {
+  return sydneyRegions.includes(s.region ?? "");
+}
+
+export const centralCoastSuburbs = allSuburbs.filter((s) => s.region !== "Newcastle" && !isLakeMacquarie(s) && !isSydneyNorth(s));
+export const sydneyNorthSuburbs = allSuburbs.filter((s) => isSydneyNorth(s));
 export const lakeMacquarieSuburbs = allSuburbs.filter((s) => isLakeMacquarie(s));
 
 export function getSuburb(slug: string) {
