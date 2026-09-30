@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={business.logo} alt={business.name} className="h-12 w-auto rounded-md" loading="lazy" width={120} height={48} />
+              <img src={business.logo} alt={business.name} className="h-12 w-auto rounded-md" loading="lazy" width={400} height={142} />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed">
               Licensed, insured Central Coast painters based in Kariong. {`${business.yearsExperience} years`} of interior, exterior, roof, strata and commercial painting with Dulux &amp; Haymes.

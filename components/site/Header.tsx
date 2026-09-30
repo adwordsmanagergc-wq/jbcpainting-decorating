@@ -30,7 +30,7 @@ export function Header() {
       <div className="container-x flex h-16 items-center justify-between gap-6 md:h-20">
         <Link href="/" className="flex items-center gap-3" aria-label={`${business.name} — home`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={business.logo} alt={`${business.name} logo`} className="h-10 w-auto rounded-md md:h-12" width={120} height={48} />
+          <img src={business.logo} alt={`${business.name} logo`} className="h-10 w-auto rounded-md md:h-12" width={400} height={142} fetchPriority="high" />
           <span className="hidden leading-tight xl:block">
             <span className="block font-display text-lg font-semibold">JBC Painting</span>
             <span className="block text-xs text-stone-400">&amp; Decorating · Central Coast</span>
