@@ -14,9 +14,11 @@ export default function LeafletMap({ pins, activeSlug, focusSlugs, height = 520 
     import("leaflet").then((L) => {
       if (cancelled || !ref.current) return;
       map = L.map(ref.current, { scrollWheelZoom: false, attributionControl: true });
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 18,
+      // OpenStreetMap tiles: free, no API key. Softened to a light, muted look via .jbc-tiles in globals.css.
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+        className: "jbc-tiles",
       }).addTo(map);
 
       const focus = focusSlugs?.length ? pins.filter((p) => focusSlugs.includes(p.slug)) : pins;
