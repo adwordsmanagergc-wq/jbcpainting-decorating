@@ -40,7 +40,7 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={serviceSchema({ name: s.name, description: s.metaDescription, url: `${business.siteUrl}/services/${s.slug}`, area: "Central Coast, NSW" })} />
+      <JsonLd data={serviceSchema({ name: s.name, description: s.metaDescription, url: `${business.siteUrl}/services/${s.slug}`, area: "Central Coast & Newcastle, NSW" })} />
       <PageHero
         crumbs={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: s.name, href: `/services/${s.slug}` }]}
         eyebrow={`${s.name} · Central Coast`}
