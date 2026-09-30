@@ -15,7 +15,7 @@ export default function ContactPage() {
     { icon: Phone, label: "Call", value: business.phone, href: business.phoneHref },
     { icon: MessageCircle, label: "WhatsApp", value: "Message us", href: business.whatsapp },
     { icon: Mail, label: "Email", value: business.email, href: `mailto:${business.email}` },
-    { icon: MapPin, label: "Based in", value: "Kariong · Servicing the Central Coast" },
+    { icon: MapPin, label: "Based in", value: "Kariong · Servicing the Central Coast & Newcastle" },
     { icon: Clock, label: "Hours", value: business.hours },
   ];
   return (
