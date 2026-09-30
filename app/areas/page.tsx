@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { pageMeta } from "@/lib/meta";
-import { allSuburbs, centralCoastSuburbs, suburbsByRegion } from "@/lib/areas";
+import { allSuburbs, centralCoastSuburbs, lakeMacquarieSuburbs, suburbsByRegion } from "@/lib/areas";
 import { pins } from "@/lib/pins";
 import { photo } from "@/lib/gallery";
 import { PageHero } from "@/components/site/PageHero";
@@ -11,8 +11,8 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { JsonLd } from "@/components/site/JsonLd";
 import { business } from "@/lib/business";
 
-const title = "Service Areas | Central Coast & Newcastle Painters | JBC";
-const description = `Painters for every Central Coast suburb — ${centralCoastSuburbs.length} local pages from Patonga to Gwandalan — plus Newcastle. Find your suburb and get a free quote.`;
+const title = "Service Areas | Central Coast, Lake Macquarie & Newcastle Painters | JBC";
+const description = `Painters for every Central Coast suburb — ${centralCoastSuburbs.length} local pages from Patonga to Gwandalan — plus ${lakeMacquarieSuburbs.length} Lake Macquarie suburbs and Newcastle. Find your suburb and get a free quote.`;
 
 export const metadata: Metadata = pageMeta({ title, description, path: "/areas" });
 
@@ -34,8 +34,8 @@ export default function AreasPage() {
       <PageHero
         crumbs={[{ name: "Home", href: "/" }, { name: "Areas", href: "/areas" }]}
         eyebrow="Service areas"
-        title="Painters for every Central Coast suburb"
-        lead={`From our base in Kariong we paint homes and businesses in all ${centralCoastSuburbs.length} Central Coast suburbs listed below — from the Hawkesbury to Lake Macquarie — and take on projects across Newcastle.`}
+        title="Painters from the Central Coast to Newcastle"
+        lead={`Based in Kariong, we paint homes and businesses in all ${centralCoastSuburbs.length} Central Coast suburbs, ${lakeMacquarieSuburbs.length} Lake Macquarie suburbs and across Newcastle. Find your suburb below for local advice, pricing and FAQs.`}
         photo={photo("jbc-22-exterior-queenslander.jpg")}
       />
 
