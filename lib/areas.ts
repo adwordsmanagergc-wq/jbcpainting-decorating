@@ -7,6 +7,12 @@ import { groupD } from "./suburbs/group-d";
 import { groupE } from "./suburbs/group-e";
 import { groupF } from "./suburbs/group-f";
 import { groupNewcastle } from "./suburbs/group-newcastle";
+import { groupLm1 } from "./suburbs/group-lm-1";
+import { groupLm2 } from "./suburbs/group-lm-2";
+import { groupLm3 } from "./suburbs/group-lm-3";
+import { groupLm4 } from "./suburbs/group-lm-4";
+import { groupLm5 } from "./suburbs/group-lm-5";
+import { groupLm6 } from "./suburbs/group-lm-6";
 
 export const regions = [
   { name: "Gosford & Surrounds", blurb: "Our home turf — Kariong, Gosford CBD and the surrounding valleys, minutes from our base." },
@@ -18,6 +24,9 @@ export const regions = [
   { name: "Wyong & Northern Corridor", blurb: "Established Wyong streets plus the fast-growing Warnervale and Hamlyn Terrace estates." },
   { name: "Budgewoi & Northern Lakes", blurb: "Lake and beach communities from Toukley and Norah Head to Lake Munmorah and Gwandalan." },
   { name: "Hinterland & Hawkesbury", blurb: "Acreage, farmhouses and river retreats across the Mangrove Mountain plateau, valleys and Hawkesbury." },
+  { name: "Morisset & Southern Lake", blurb: "Lakeside villages, peninsula streets and acreage from Wyee and Morisset around to Wangi Wangi, the closest of the Lake Macquarie suburbs to our Kariong base." },
+  { name: "Toronto & Western Lake", blurb: "Toronto, the western bays and the old mining towns from Teralba and Speers Point up to Cardiff, Edgeworth and West Wallsend." },
+  { name: "Swansea & Eastern Lake", blurb: "Beach, channel and lakefront suburbs from Catherine Hill Bay and Swansea up through Belmont and Warners Bay to Charlestown's fringe." },
   { name: "Newcastle", blurb: "Heritage terraces, bungalows and coastal homes — projects scheduled from our Central Coast base." },
 ] as const;
 
@@ -40,10 +49,23 @@ export const allSuburbs: Suburb[] = [
   ...groupD,
   ...groupE,
   ...groupF,
+  ...groupLm1,
+  ...groupLm2,
+  ...groupLm3,
+  ...groupLm4,
+  ...groupLm5,
+  ...groupLm6,
   ...groupNewcastle,
 ].map((s) => ({ ...s, region: s.region ?? legacyRegion[s.slug] ?? "Gosford & Surrounds" }));
 
-export const centralCoastSuburbs = allSuburbs.filter((s) => s.region !== "Newcastle");
+export const lakeMacquarieRegions = ["Morisset & Southern Lake", "Toronto & Western Lake", "Swansea & Eastern Lake"];
+
+export function isLakeMacquarie(s: Suburb) {
+  return lakeMacquarieRegions.includes(s.region ?? "");
+}
+
+export const centralCoastSuburbs = allSuburbs.filter((s) => s.region !== "Newcastle" && !isLakeMacquarie(s));
+export const lakeMacquarieSuburbs = allSuburbs.filter((s) => isLakeMacquarie(s));
 
 export function getSuburb(slug: string) {
   return allSuburbs.find((s) => s.slug === slug);

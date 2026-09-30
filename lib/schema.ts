@@ -39,6 +39,7 @@ export function businessSchema() {
     })),
     areaServed: [
       { "@type": "AdministrativeArea", name: "Central Coast, NSW" },
+      { "@type": "AdministrativeArea", name: "Lake Macquarie, NSW" },
       { "@type": "City", name: "Newcastle, NSW" },
       ...allSuburbs.map((s) => ({ "@type": "Place", name: `${s.name} NSW ${s.postcode}` })),
     ],
