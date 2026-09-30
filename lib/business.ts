@@ -27,8 +27,24 @@ export const business = {
 };
 
 export const paintBrands = [
-  { name: "Dulux", url: "https://www.dulux.com.au", logo: "/images/dulux-logo.webp" },
-  { name: "Haymes Paint", url: "https://www.haymes.com.au", logo: "/images/haymes-logo.png" },
+  {
+    name: "Dulux",
+    url: "https://www.dulux.com.au",
+    logo: "/images/brands/dulux.svg",
+    logoOnDark: "/images/brands/dulux-white.svg",
+    width: 240,
+    height: 82,
+    heightClass: "h-9",
+  },
+  {
+    name: "Haymes Paint",
+    url: "https://www.haymespaint.com.au",
+    logo: "/images/brands/haymes.svg",
+    logoOnDark: null,
+    width: 87,
+    height: 42,
+    heightClass: "h-12",
+  },
 ];
 
 export const navLinks = [
