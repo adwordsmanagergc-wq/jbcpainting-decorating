@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Check, Home, MapPin, PaintBucket, Receipt, Wind } from "lucide-react";
-import { allSuburbs, getSuburb, isNewcastle, regions } from "@/lib/areas";
+import { allSuburbs, getSuburb, isLakeMacquarie, isNewcastle, regions } from "@/lib/areas";
 import { business, reviews } from "@/lib/business";
 import { services } from "@/lib/services";
 import { heroForSlug, photosForSlug } from "@/lib/gallery";
@@ -43,6 +43,7 @@ export default async function SuburbPage({ params }: Props) {
   if (!suburb) notFound();
 
   const newcastle = isNewcastle(suburb);
+  const lakeMac = isLakeMacquarie(suburb);
   const { url } = getSuburbMetadata(suburb);
   const nearby = suburb.nearbySuburbs.map(getSuburb).filter((s) => s !== undefined);
   const sameRegion = allSuburbs.filter((s) => s.region === suburb.region && s.slug !== suburb.slug);
@@ -204,6 +205,8 @@ export default async function SuburbPage({ params }: Props) {
             <p className="lead mt-5">
               {newcastle
                 ? "We book Newcastle work in scheduled project blocks from our Central Coast base, so your job gets our full crew from start to finish."
+                : lakeMac
+                ? "We travel up the M1 from our Kariong base and book Lake Macquarie jobs as dedicated blocks, so your home gets our full crew from start to finish."
                 : "We're based in Kariong and work right across the Central Coast — often in your street already."}
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -242,7 +245,7 @@ export default async function SuburbPage({ params }: Props) {
 
       <CtaBanner
         title={`Ready to transform your ${suburb.name} home?`}
-        text={newcastle ? "Free, itemised quotes for Newcastle homes and businesses. Call to book an on-site inspection." : undefined}
+        text={newcastle ? "Free, itemised quotes for Newcastle homes and businesses. Call to book an on-site inspection." : lakeMac ? "Free, itemised quotes for Lake Macquarie homes and businesses. Call to book an on-site inspection." : undefined}
       />
     </>
   );
