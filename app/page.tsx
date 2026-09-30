@@ -129,19 +129,20 @@ export default function HomePage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift ${i === 0 ? "bg-forest text-white sm:col-span-2 lg:col-span-1 lg:row-span-2" : "card"}`}
+                className={`group relative flex min-h-[20rem] flex-col justify-between overflow-hidden rounded-3xl bg-forest p-7 text-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift ${i === 0 ? "sm:col-span-2 lg:col-span-1 lg:row-span-2" : ""}`}
               >
-                {i === 0 && (
-                  <Image src={photo(s.image).src} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover opacity-30 transition-opacity group-hover:opacity-40" />
-                )}
+                <Image src={photo(s.image).src} alt="" fill sizes={i === 0 ? "(min-width: 1024px) 400px, 100vw" : "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"} className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-forest via-forest/75 to-forest/25 transition-opacity duration-300 group-hover:opacity-90" />
                 <div className="relative">
-                  <span className={`grid h-12 w-12 place-items-center rounded-2xl ${i === 0 ? "bg-white/15 text-white" : "bg-brand-50 text-brand-700"}`}>
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15 text-white ring-1 ring-white/20 backdrop-blur">
                     <ServiceIcon name={s.icon} className="h-6 w-6" />
                   </span>
-                  <h3 className={`mt-6 text-2xl font-semibold ${i === 0 ? "md:text-4xl" : ""}`}>{s.name}</h3>
-                  <p className={`mt-3 leading-relaxed ${i === 0 ? "text-white/80 md:text-lg" : "text-stone"}`}>{s.summary}</p>
                 </div>
-                <span className={`relative mt-8 inline-flex items-center gap-2 font-semibold ${i === 0 ? "text-white" : "text-brand-700"}`}>
+                <div className="relative mt-16">
+                  <h3 className={`text-2xl font-semibold ${i === 0 ? "md:text-4xl" : ""}`}>{s.name}</h3>
+                  <p className={`mt-3 leading-relaxed text-white/85 ${i === 0 ? "md:text-lg" : ""}`}>{s.summary}</p>
+                </div>
+                <span className="relative mt-6 inline-flex items-center gap-2 font-semibold text-white">
                   Learn more <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </span>
               </Link>
