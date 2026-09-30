@@ -25,10 +25,10 @@ export function Footer() {
             <a href={business.instagram} target="_blank" rel="noopener noreferrer" className="mt-6 flex items-center gap-2 font-semibold text-white hover:text-brand-100"><Instagram className="h-5 w-5" /> @jbc_painting_decorating</a>
           </div>
 
-          <details className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+          <details data-desktop-open suppressHydrationWarning className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 lg:pointer-events-none lg:cursor-default [&::-webkit-details-marker]:hidden">
               <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Services</h2>
-              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180" aria-hidden />
+              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180 lg:hidden" aria-hidden />
             </summary>
             <ul className="mt-5 space-y-3">
               {services.map((s) => (
@@ -38,10 +38,10 @@ export function Footer() {
             </ul>
           </details>
 
-          <details className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+          <details data-desktop-open suppressHydrationWarning className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 lg:pointer-events-none lg:cursor-default [&::-webkit-details-marker]:hidden">
               <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Popular areas</h2>
-              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180" aria-hidden />
+              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180 lg:hidden" aria-hidden />
             </summary>
             <ul className="mt-5 grid grid-cols-1 gap-3">
               {popular.map((s) => (
@@ -62,6 +62,13 @@ export function Footer() {
           </div>
         </div>
 
+        <script
+          // Footer link lists stay open on desktop and collapse into dropdowns on mobile.
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var q=window.matchMedia('(min-width: 1024px)');function s(){document.querySelectorAll('footer details[data-desktop-open]').forEach(function(d){d.open=q.matches;});}s();q.addEventListener('change',s);})();",
+          }}
+        />
         <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {business.name} · ABN {business.abn} · {business.licenseNumber}</p>
           <p>
