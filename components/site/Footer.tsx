@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Clock, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Instagram, ChevronDown } from "lucide-react";
 import { business } from "@/lib/business";
 import { services } from "@/lib/services";
-import { allSuburbs } from "@/lib/areas";
+import { allSuburbs, getSuburb } from "@/lib/areas";
+
+const popularSlugs = ["kariong", "gosford", "terrigal", "erina", "woy-woy", "umina-beach", "the-entrance", "wyong", "hornsby", "warners-bay", "newcastle"];
+const popular = popularSlugs.map(getSuburb).filter((s) => s !== undefined);
 import { Swatches } from "./Icons";
 
 export function Footer() {
@@ -16,32 +19,37 @@ export function Footer() {
               <img src={business.logo} alt={business.name} className="h-12 w-auto rounded-md" loading="lazy" width={400} height={142} />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed">
-              Licensed, insured Central Coast painters based in Kariong. {`${business.yearsExperience} years`} of interior, exterior, roof, strata and commercial painting with Dulux &amp; Haymes.
+              Licensed, insured Central Coast painters based in Kariong. {`${business.yearsExperience} years of interior`}, exterior, roof, strata and commercial painting with Dulux &amp; Haymes.
             </p>
             <Swatches className="mt-6" />
             <a href={business.instagram} target="_blank" rel="noopener noreferrer" className="mt-6 flex items-center gap-2 font-semibold text-white hover:text-brand-100"><Instagram className="h-5 w-5" /> @jbc_painting_decorating</a>
           </div>
 
-          <div>
-            <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Services</h2>
+          <details className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+              <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Services</h2>
+              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180" aria-hidden />
+            </summary>
             <ul className="mt-5 space-y-3">
               {services.map((s) => (
                 <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-white">{s.name}</Link></li>
               ))}
               <li><Link href="/painting-cost-central-coast" className="hover:text-white">Painting cost guide</Link></li>
             </ul>
-          </div>
+          </details>
 
-          <div>
-            <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Popular areas</h2>
+          <details className="group border-b border-white/10 pb-4 lg:border-0 lg:pb-0">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+              <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Popular areas</h2>
+              <ChevronDown className="h-4 w-4 text-white/60 transition-transform duration-300 group-open:rotate-180" aria-hidden />
+            </summary>
             <ul className="mt-5 grid grid-cols-1 gap-3">
-              {allSuburbs.slice(0, 9).map((s) => (
+              {popular.map((s) => (
                 <li key={s.slug}><Link href={`/painter/${s.slug}`} className="hover:text-white">Painter {s.name}</Link></li>
               ))}
-              <li><Link href="/painter/newcastle" className="hover:text-white">Painter Newcastle</Link></li>
               <li><Link href="/areas" className="font-semibold text-brand-100 hover:text-white">All {allSuburbs.length} areas →</Link></li>
             </ul>
-          </div>
+          </details>
 
           <div>
             <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-white">Contact</h2>
