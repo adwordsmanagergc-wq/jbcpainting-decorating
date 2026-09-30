@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-cream text-ink font-sans antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection { @apply bg-brand text-white; }
+  :focus-visible { @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-cream; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-20 md:py-28; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600; }
+  .eyebrow::before { content: ""; @apply block h-px w-6 bg-current; }
+  .h-section { @apply text-3xl font-semibold leading-[1.1] text-ink sm:text-4xl lg:text-5xl; }
+  .lead { @apply text-lg leading-relaxed text-stone; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold transition-all duration-200; }
+  .btn-primary { @apply btn bg-brand text-white shadow-[0_8px_20px_-8px_rgba(46,139,71,.7)] hover:bg-brand-700 hover:-translate-y-0.5; }
+  .btn-ghost { @apply btn border border-ink/15 bg-white/60 text-ink hover:border-ink/40 hover:bg-white; }
+  .btn-light { @apply btn border border-white/25 text-white hover:bg-white/10; }
+  .card { @apply rounded-3xl bg-white shadow-card ring-1 ring-ink/5; }
+  .prose-jbc p { @apply mb-5 text-[17px] leading-relaxed text-stone; }
+  .brush-underline { background: linear-gradient(transparent 62%, rgba(214,138,58,.35) 62%, rgba(214,138,58,.35) 92%, transparent 92%); }
+}
+
+.leaflet-container { font-family: var(--font-sans), system-ui, sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.jbc-tip { background: #0F2219; color: #fff; border: 0; border-radius: 9999px; padding: 4px 10px; font-weight: 600; font-size: 12px; box-shadow: 0 4px 12px rgba(15,34,25,.25); }
+.jbc-tip::before { border-top-color: #0F2219 !important; }
+.leaflet-interactive { cursor: pointer; }

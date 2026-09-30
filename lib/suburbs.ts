@@ -17,19 +17,19 @@ export const suburbs: Suburb[] = [
     slug: "kariong",
     name: "Kariong",
     postcode: "2250",
-    latitude: -33.4167,
-    longitude: 151.3167,
+    latitude: -33.4390,
+    longitude: 151.2950,
     intro:
       "Kariong is one of the Central Coast's largest family suburbs, stretching across the hills above the M1 motorway with a diverse mix of 1970s brick veneer homes and newer estate developments. As JBC Painting & Decorating's home base, we know every street and cul-de-sac here. Whether your home is a classic brick rancher or a modern double-storey, we bring the right products and preparation to make it look its absolute best.",
     localContext:
-      "Kariong's housing stock spans nearly five decades of construction, which means our painters regularly encounter everything from original 1970s texture-coat renders to smooth render on contemporary builds. The suburb sits at a slight elevation, and homes on the western edges catch prevailing winds that can accelerate paint weathering — particularly on south-facing walls. We factor in these micro-climatic conditions when recommending paint systems, always opting for flexible, breathable coatings that handle Kariong's temperature swings between seasons.\n\nWith Gosford Grammar School and the Gateway Shopping Centre nearby, Kariong continues to attract growing families who want to put their personal stamp on their properties. Feature walls, stylish colour updates, and full exterior repaints ahead of selling are among the most popular projects we complete here. Our local knowledge means we can advise on colour schemes that complement the bushland surrounds without clashing with neighbouring homes — a common concern in the tightly packed new estates off Avoca Drive.",
+      "Kariong's housing stock spans nearly five decades of construction, which means our painters regularly encounter everything from original 1970s texture-coat renders to smooth render on contemporary builds. The suburb sits at a slight elevation, and homes on the western edges catch prevailing winds that can accelerate paint weathering — particularly on south-facing walls. We factor in these micro-climatic conditions when recommending paint systems, always opting for flexible, breathable coatings that handle Kariong's temperature swings between seasons.\n\nWith local schools, shops and quick M1 access, Kariong continues to attract growing families who want to put their personal stamp on their properties. Feature walls, stylish colour updates, and full exterior repaints ahead of selling are among the most popular projects we complete here. Our local knowledge means we can advise on colour schemes that complement the bushland surrounds without clashing with neighbouring homes — a common concern in the tightly packed newer estates.",
     uniqueSellingPoints: [
       "Home base suburb — our team lives here and knows every street",
       "Experience with both 1970s brick veneer and modern render finishes",
       "Colour consultation tailored to Kariong's bushland palette",
       "Fast response times — we can often provide same-week quotes",
     ],
-    nearbySuburbs: ["west-gosford", "somersby", "point-clare", "calga"],
+    nearbySuburbs: ["west-gosford", "somersby", "point-clare", "calga", "gosford"],
     faqs: [
       {
         question: "How much does it cost to repaint a brick veneer home in Kariong?",
@@ -39,12 +39,12 @@ export const suburbs: Suburb[] = [
       {
         question: "Do you work on the newer estate homes in Kariong?",
         answer:
-          "Absolutely. We work regularly in the newer Kariong estates off Avoca Drive and Hartley Road. Modern rendered homes require different preparation to older brick, and our team uses the appropriate primers and top coats for long-lasting results.",
+          "Absolutely. We work regularly in the newer Kariong estates. Modern rendered homes require different preparation to older brick, and our team uses the appropriate primers and top coats for long-lasting results.",
       },
       {
         question: "Can you help with colour selection for my Kariong home?",
         answer:
-          "Yes, we offer complimentary colour consultation as part of our quoting process. We can walk through the Dulux and Taubmans colour ranges and help you choose shades that suit the natural bushland setting and complement your roof and garden.",
+          "Yes, we offer complimentary colour consultation as part of our quoting process. We can walk through the Dulux and Haymes colour ranges and help you choose shades that suit the natural bushland setting and complement your roof and garden.",
       },
       {
         question: "How long does an exterior repaint take in Kariong?",
@@ -86,8 +86,8 @@ export const suburbs: Suburb[] = [
     slug: "west-gosford",
     name: "West Gosford",
     postcode: "2250",
-    latitude: -33.4167,
-    longitude: 151.3333,
+    latitude: -33.4260,
+    longitude: 151.3190,
     intro:
       "West Gosford sits just west of the Gosford CBD and railway corridor, a suburb of older fibro and brick homes from the 1950s through to the 1970s, interspersed with light commercial premises along its main roads. The proximity to Gosford's amenities makes it popular with first-home buyers and downsizers who are often investing in refreshing older properties. JBC Painting & Decorating has worked extensively in West Gosford and understands the unique challenges these classic homes present.",
     localContext:
@@ -98,7 +98,7 @@ export const suburbs: Suburb[] = [
       "Interior renovation repaints including wallpaper removal",
       "Close to our Kariong base — fast scheduling and responsive service",
     ],
-    nearbySuburbs: ["kariong", "point-clare", "somersby", "tascott"],
+    nearbySuburbs: ["gosford", "kariong", "point-clare", "narara", "tascott"],
     faqs: [
       {
         question: "My West Gosford home has old fibro walls — can you paint over them?",
@@ -150,8 +150,8 @@ export const suburbs: Suburb[] = [
     slug: "point-clare",
     name: "Point Clare",
     postcode: "2250",
-    latitude: -33.4333,
-    longitude: 151.35,
+    latitude: -33.4430,
+    longitude: 151.3280,
     intro:
       "Point Clare is a scenic waterfront suburb on the northern shores of Brisbane Water, where a mix of 1960s brick homes and classic weatherboard cottages sit alongside newer builds enjoying sweeping water views. The combination of tidal air, morning humidity, and intense summer sun creates a challenging environment for exterior paint — and that's exactly the environment JBC Painting & Decorating has spent years mastering on the Central Coast waterway. A professional painter in Point Clare understands that preparation and the right product specification make all the difference.",
     localContext:
@@ -162,7 +162,7 @@ export const suburbs: Suburb[] = [
       "Experience with both waterfront cottages and ridge-top rendered homes",
       "Colour advice aligned with Point Clare's natural water-and-bush aesthetic",
     ],
-    nearbySuburbs: ["tascott", "west-gosford", "kariong", "koolewong"],
+    nearbySuburbs: ["tascott", "west-gosford", "gosford", "kariong", "koolewong"],
     faqs: [
       {
         question: "How does living near Brisbane Water affect how often I need to paint?",
@@ -172,7 +172,7 @@ export const suburbs: Suburb[] = [
       {
         question: "What paint do you recommend for a waterfront home in Point Clare?",
         answer:
-          "For waterfront homes we specify Dulux Weathershield or Taubmans Endure Exterior — both are 100% acrylic, UV-resistant, and formulated for Australia's harsh coastal conditions. All bare metal should be primed with a zinc-phosphate rust inhibitor before top-coating.",
+          "For waterfront homes we specify Dulux Weathershield or Haymes Solashield — both are 100% acrylic, UV-resistant, and formulated for Australia's harsh coastal conditions. All bare metal should be primed with a zinc-phosphate rust inhibitor before top-coating.",
       },
       {
         question: "Can you paint timber decks and fences at Point Clare?",
@@ -219,8 +219,8 @@ export const suburbs: Suburb[] = [
     slug: "tascott",
     name: "Tascott",
     postcode: "2250",
-    latitude: -33.45,
-    longitude: 151.35,
+    latitude: -33.4510,
+    longitude: 151.3160,
     intro:
       "Tascott is a small, unhurried village on the western shore of Brisbane Water, one of those quiet pockets of the Central Coast that long-term residents fiercely love. Character homes — many of them older brick and fibro cottages — sit close together along narrow streets that wind down to the Tascott Wharf. Painting a home in Tascott is as much about preserving its charm as it is about protection from the elements.",
     localContext:
@@ -283,8 +283,8 @@ export const suburbs: Suburb[] = [
     slug: "koolewong",
     name: "Koolewong",
     postcode: "2256",
-    latitude: -33.4667,
-    longitude: 151.35,
+    latitude: -33.4680,
+    longitude: 151.3170,
     intro:
       "Koolewong is a tiny hillside village tucked on the western bank of Brisbane Water, where steep blocks and direct waterway access define life here. With just a small number of homes, mostly older weatherboard and fibro dwellings clinging to the slopes, Koolewong demands painters who are comfortable with challenging terrain and who understand the demands of a full waterfront environment. JBC Painting & Decorating is the team for the job.",
     localContext:
@@ -347,8 +347,8 @@ export const suburbs: Suburb[] = [
     slug: "woy-woy-bay",
     name: "Woy Woy Bay",
     postcode: "2256",
-    latitude: -33.4833,
-    longitude: 151.3333,
+    latitude: -33.4870,
+    longitude: 151.3000,
     intro:
       "Woy Woy Bay is a secluded, bush-flanked bay community on the southern reaches of Brisbane Water — a place that feels a world away from the busy Pacific Highway, even though it's only a short drive away. The suburb's character comes from its mix of older fibro holiday shacks that have been slowly converted to permanent residences, newer purpose-built homes, and a dense bushland backdrop that shapes both the aesthetic and the maintenance challenges for any home here.",
     localContext:
@@ -411,8 +411,8 @@ export const suburbs: Suburb[] = [
     slug: "phegans-bay",
     name: "Phegans Bay",
     postcode: "2256",
-    latitude: -33.4833,
-    longitude: 151.35,
+    latitude: -33.4880,
+    longitude: 151.3120,
     intro:
       "Phegans Bay is one of the most private and peaceful waterfront enclaves on the Central Coast — a small collection of homes tucked along a quiet bay off Brisbane Water, where the pace of life is unhurried and the natural setting takes centre stage. Homes here are predominantly older, modest in scale, and valued for their direct water access and seclusion. JBC Painting & Decorating provides personalised service to Phegans Bay residents who want quality painting with minimal fuss.",
     localContext:
@@ -475,8 +475,8 @@ export const suburbs: Suburb[] = [
     slug: "horsfield-bay",
     name: "Horsfield Bay",
     postcode: "2256",
-    latitude: -33.4667,
-    longitude: 151.3333,
+    latitude: -33.4860,
+    longitude: 151.3210,
     intro:
       "Horsfield Bay is a small, bush-fringed waterfront suburb sitting between the Woy Woy peninsula and the lower reaches of Brisbane Water. A blend of permanent residents and holiday home owners call this quiet bay home, with properties ranging from older fibro shacks updated over the decades through to contemporary homes built for the view. The bush setting and water proximity shape everything about painting in Horsfield Bay — from product selection to access logistics.",
     localContext:
@@ -539,8 +539,8 @@ export const suburbs: Suburb[] = [
     slug: "somersby",
     name: "Somersby",
     postcode: "2250",
-    latitude: -33.3833,
-    longitude: 151.3,
+    latitude: -33.3640,
+    longitude: 151.2870,
     intro:
       "Somersby occupies a semi-rural stretch of the Central Coast's northern hinterland, where acreage properties and older farmhouses sit alongside the Australian Reptile Park and the mist-shrouded Somersby Falls. It's bushfire-prone country, and that shapes the way we approach exterior painting here — choosing products and colours that meet construction requirements while still achieving the aesthetic homeowners want. JBC Painting & Decorating understands the specific demands of painting in Somersby's environment.",
     localContext:
@@ -603,8 +603,8 @@ export const suburbs: Suburb[] = [
     slug: "calga",
     name: "Calga",
     postcode: "2250",
-    latitude: -33.3667,
-    longitude: 151.2833,
+    latitude: -33.4200,
+    longitude: 151.2270,
     intro:
       "Calga is as rural as the Central Coast gets — a scattering of hobby farms and rural properties tucked between the M1 motorway and the vast expanse of Dharug National Park. Properties here are far-flung, driveways are long, and homes are built to endure. JBC Painting & Decorating travels out to Calga regularly and brings the same standard of preparation and finish that we'd deliver in the middle of suburban Gosford.",
     localContext:
@@ -667,8 +667,8 @@ export const suburbs: Suburb[] = [
     slug: "mooney-mooney-creek",
     name: "Mooney Mooney Creek",
     postcode: "2250",
-    latitude: -33.4,
-    longitude: 151.25,
+    latitude: -33.4000,
+    longitude: 151.2600,
     intro:
       "Mooney Mooney Creek is a hidden gem — a tiny creek-side community tucked into a narrow valley near the Hawkesbury River, where the canopy closes overhead and the sound of running water is the constant background. The handful of homes here are primarily creek-side cottages and bush retreats, and they sit in one of the most distinctive and challenging painting environments on the Central Coast: deep shade, high humidity, and organic debris from the surrounding rainforest.",
     localContext:
@@ -699,7 +699,7 @@ export const suburbs: Suburb[] = [
       {
         question: "What paint is best for shaded exterior walls at Mooney Mooney Creek?",
         answer:
-          "We recommend a 100% acrylic exterior paint with built-in anti-mould protection — products like Taubmans All Weather or Dulux Weathershield. In particularly problematic areas, we add a fungicide to the topcoat for additional protection. A regular annual wash-down with a diluted solution will extend the appearance between repaints.",
+          "We recommend a 100% acrylic exterior paint with built-in anti-mould protection — products like Dulux Weathershield or Haymes Solashield. In particularly problematic areas, we add a fungicide to the topcoat for additional protection. A regular annual wash-down with a diluted solution will extend the appearance between repaints.",
       },
       {
         question: "How often does a creek-side home in Mooney Mooney Creek need repainting?",
@@ -731,8 +731,8 @@ export const suburbs: Suburb[] = [
     slug: "woy-woy",
     name: "Woy Woy",
     postcode: "2256",
-    latitude: -33.5167,
-    longitude: 151.3167,
+    latitude: -33.4856,
+    longitude: 151.3244,
     intro:
       "Woy Woy is the beating heart of the peninsula — a bustling railway town on the southern shore of Brisbane Water where fibro and weatherboard homes from the 1950s, 60s, and 70s line the streets, and a genuine sense of community runs deep. The salt-laden air drifting in off the waterway and the esplanade's proximity to the water make exterior paint longevity a real challenge, and it's one JBC Painting & Decorating has mastered across decades of work on the Peninsula. Whether it's a tired fibro cottage or a period brick home crying out for a modern colour refresh, we know exactly what's needed.",
     localContext:
@@ -743,7 +743,7 @@ export const suburbs: Suburb[] = [
       "Heritage-appropriate colour advice for Woy Woy's period streetscapes",
       "Commercial painting for the Woy Woy retail and business strip",
     ],
-    nearbySuburbs: ["woy-woy-bay", "koolewong", "tascott", "horsfield-bay"],
+    nearbySuburbs: ["woy-woy-bay", "koolewong", "ettalong-beach", "umina-beach", "horsfield-bay"],
     faqs: [
       {
         question: "How does Woy Woy's waterfront location affect paint durability?",
@@ -795,8 +795,8 @@ export const suburbs: Suburb[] = [
     slug: "terrigal",
     name: "Terrigal",
     postcode: "2260",
-    latitude: -33.45,
-    longitude: 151.45,
+    latitude: -33.4478,
+    longitude: 151.4453,
     intro:
       "Terrigal is the Central Coast's premier beachside suburb — a stretch of golden sand, upscale restaurants, and high-end real estate that draws visitors and property buyers from Sydney and beyond. The combination of luxury homes, holiday apartments, older weatherboard beach houses, and a thriving business strip along The Esplanade makes Terrigal one of the most diverse and rewarding suburbs for a professional painting contractor. JBC Painting & Decorating delivers the premium finishes that Terrigal's discerning property owners expect.",
     localContext:
@@ -807,12 +807,12 @@ export const suburbs: Suburb[] = [
       "Experience with both heritage weatherboard beach houses and modern rendered properties",
       "Commercial painting for Terrigal's restaurant and retail Esplanade strip",
     ],
-    nearbySuburbs: ["erina", "woy-woy", "umina-beach", "point-clare"],
+    nearbySuburbs: ["wamberal", "avoca-beach", "erina", "kincumber"],
     faqs: [
       {
         question: "What exterior paint system do you recommend for a home near Terrigal Beach?",
         answer:
-          "For homes within a few hundred metres of Terrigal Beach, we specify a premium 100% acrylic exterior paint such as Dulux Weathershield or Taubmans Endure, paired with a zinc-phosphate rust-inhibiting primer on all metal surfaces. These products are formulated to resist salt attack, UV degradation, and moisture intrusion — the three main enemies of coastal paint systems.",
+          "For homes within a few hundred metres of Terrigal Beach, we specify a premium 100% acrylic exterior paint such as Dulux Weathershield or Haymes Solashield, paired with a zinc-phosphate rust-inhibiting primer on all metal surfaces. These products are formulated to resist salt attack, UV degradation, and moisture intrusion — the three main enemies of coastal paint systems.",
       },
       {
         question: "How often should a holiday rental property in Terrigal be repainted?",
@@ -859,8 +859,8 @@ export const suburbs: Suburb[] = [
     slug: "erina",
     name: "Erina",
     postcode: "2250",
-    latitude: -33.4333,
-    longitude: 151.4,
+    latitude: -33.4370,
+    longitude: 151.3900,
     intro:
       "Erina is the commercial and residential engine room of the Central Coast — home to Erina Fair shopping centre, a major arterial road network, and a substantial residential population spread across both established 1970s-80s neighbourhoods and newer estate developments. The variety of housing eras and the significant commercial activity make Erina one of the most diverse painting markets on the Coast, and JBC Painting & Decorating is well equipped to handle every corner of it.",
     localContext:
@@ -871,7 +871,7 @@ export const suburbs: Suburb[] = [
       "Access experience for elevated Erina Heights properties",
       "New development painting for Erina's growing residential estates",
     ],
-    nearbySuburbs: ["terrigal", "point-clare", "west-gosford", "kariong"],
+    nearbySuburbs: ["terrigal", "springfield", "east-gosford", "green-point", "wamberal"],
     faqs: [
       {
         question: "Can you update the colours on a 1970s brick veneer home in Erina?",
@@ -923,8 +923,8 @@ export const suburbs: Suburb[] = [
     slug: "umina-beach",
     name: "Umina Beach",
     postcode: "2257",
-    latitude: -33.5167,
-    longitude: 151.3,
+    latitude: -33.5232,
+    longitude: 151.3097,
     intro:
       "Umina Beach is one of those rare suburbs where the laid-back beach lifestyle hasn't been polished away — a relaxed, community-oriented patch of the Woy Woy Peninsula where older fibro and weatherboard beach cottages sit alongside newer brick homes, and where the long sweep of Ocean Beach is just a short walk from most front doors. JBC Painting & Decorating understands the specific mix of older substrate challenges, salt-air coastal conditions, and renovation-driven demand that defines painting work in Umina Beach.",
     localContext:
@@ -935,7 +935,7 @@ export const suburbs: Suburb[] = [
       "Renovation repaints for shacks converted to permanent residences",
       "Palm Beach Road commercial painting for local businesses",
     ],
-    nearbySuburbs: ["woy-woy", "woy-woy-bay", "horsfield-bay", "phegans-bay"],
+    nearbySuburbs: ["ettalong-beach", "woy-woy", "pearl-beach", "woy-woy-bay", "horsfield-bay"],
     faqs: [
       {
         question: "My Umina Beach cottage has multiple layers of old paint — what do you do about that?",
@@ -987,8 +987,8 @@ export const suburbs: Suburb[] = [
     slug: "wondabyne",
     name: "Wondabyne",
     postcode: "2256",
-    latitude: -33.5167,
-    longitude: 151.2833,
+    latitude: -33.4917,
+    longitude: 151.2556,
     intro:
       "Wondabyne is extraordinary — accessible only by train or boat, with no public road to the village, it sits on the western shore of the Hawkesbury River in a pocket of pristine bushland. The heritage cottages and bush retreats here are unlike anywhere else on the Central Coast, and painting them requires a painter who is prepared to bring every tool and drop of paint in by hand or by boat. JBC Painting & Decorating is one of the few painting services that will do exactly that.",
     localContext:
