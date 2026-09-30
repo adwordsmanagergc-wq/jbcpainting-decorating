@@ -14,6 +14,8 @@ export default function LeafletMap({ pins, activeSlug, focusSlugs, height = 520 
     import("leaflet").then((L) => {
       if (cancelled || !ref.current) return;
       map = L.map(ref.current, { scrollWheelZoom: false, attributionControl: true });
+      // Leaflet 1.9 adds a flag icon to its credit by default; keep a plain "Leaflet" link instead.
+      map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener noreferrer">Leaflet</a>');
       // OpenStreetMap tiles: free, no API key. Softened to a light, muted look via .jbc-tiles in globals.css.
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
