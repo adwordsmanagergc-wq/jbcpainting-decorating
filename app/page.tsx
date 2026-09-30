@@ -18,7 +18,7 @@ import { AreaMap } from "@/components/site/AreaMap";
 
 const faqs = [
   { question: "How much does it cost to paint a house on the Central Coast?", answer: "As a 2026 guide, interior walls cost about $18–$35 per m². A full interior repaint of a 3-bedroom home (walls, ceilings and trims) is typically $6,000–$10,500, and a single-storey exterior repaint is usually $4,500–$14,000 depending on the substrate, condition and access. We provide free, itemised quotes so you know the exact cost up front." },
-  { question: "Which suburbs do you service?", answer: `Every suburb on the Central Coast — from Patonga, Umina Beach and Woy Woy in the south, through Gosford, Erina and Terrigal, The Entrance and Wyong, up to Toukley, Budgewoi, Lake Munmorah and Gwandalan — plus the hinterland. We also take on projects across Newcastle. There are ${allSuburbs.length} suburb pages on this site with local advice for each.` },
+  { question: "Which suburbs do you service?", answer: `Every suburb on the Central Coast — from Patonga, Umina Beach and Woy Woy in the south, through Gosford, Erina and Terrigal, The Entrance and Wyong, up to Toukley, Budgewoi, Lake Munmorah and Gwandalan, plus the hinterland. North of that we cover Lake Macquarie, from Wyee and Morisset to Toronto, Swansea, Belmont and Warners Bay, and projects across Newcastle. There are ${allSuburbs.length} suburb pages on this site with local advice for each.` },
   { question: "Are you licensed and insured?", answer: "Yes. JBC Painting & Decorating is licensed with NSW Fair Trading and carries full public liability insurance. We're happy to provide certificates before work begins." },
   { question: "What paint brands do you use?", answer: "We use Dulux and Haymes exclusively — two of Australia's most trusted premium paint brands, both with strong manufacturer warranties and coastal-grade exterior ranges." },
   { question: "How quickly can you quote and start?", answer: "Most on-site quotes are booked within a few days and written quotes are delivered within 48 hours. Start dates depend on the season, but we'll always give you a clear timeframe." },
@@ -207,8 +207,8 @@ export default function HomePage() {
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start">
           <div>
             <span className="eyebrow">Service areas</span>
-            <h2 className="h-section mt-4">Every Central Coast suburb — and Newcastle</h2>
-            <p className="lead mt-5">Based in Kariong, we paint homes from Patonga to Gwandalan and take on projects across Newcastle. Choose your suburb for local advice, pricing and FAQs.</p>
+            <h2 className="h-section mt-4">Every suburb from the Central Coast to Newcastle</h2>
+            <p className="lead mt-5">Based in Kariong, we paint homes from Patonga to Gwandalan, right around Lake Macquarie and across Newcastle. Choose your suburb for local advice, pricing and FAQs.</p>
             <div className="mt-8 space-y-6">
               {regions.map((g) => (
                 <div key={g.region}>
